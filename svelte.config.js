@@ -1,15 +1,20 @@
 import adapter from '@sveltejs/adapter-auto';
+import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	preprocess: preprocess(),
-
+	extensions: ['.svelte', '.svelte.md', '.md', '.svx'],
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter(),
+		package: {
+			files: (file) => !file.includes('site')
+		}
+	},
+	preprocess: [
+		preprocess({
+			postcss: true
+		}),
+		mdsvex({})
+	]
 };
-
 export default config;
