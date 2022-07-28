@@ -42,7 +42,7 @@
 			margin: 10px 0px !important;
 		}
 		&.done {
-			@apply border-gray-500;
+			@apply border-black;
 			.status {
 				img {
 					@apply opacity-100 fill-red-600;
