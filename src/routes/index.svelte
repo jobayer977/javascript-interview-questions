@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="section">
-		<h4>An introduction</h4>
+		<h4>02. An introduction</h4>
 		<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
 			<Card />
 			<Card />
@@ -36,7 +36,7 @@
 		</div>
 	</div>
 	<div class="section">
-		<h4>An introduction</h4>
+		<h4>03. An introduction</h4>
 		<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
 			<Card />
 			<Card />
