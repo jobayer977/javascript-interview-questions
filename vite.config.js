@@ -7,6 +7,9 @@ const config = {
 		fs: {
 			strict: false
 		}
+	},
+	define: {
+		'process.env.VITE_BUILD_TIME': JSON.stringify(new Date().toISOString())
 	}
 };
 export default config;
