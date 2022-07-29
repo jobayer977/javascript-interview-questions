@@ -1,12 +1,12 @@
-<script>
-	export let isDone = false;
+<script lang="ts">
+	export let card: any = {};
 </script>
 
-<div class="card" class:done={isDone}>
+<div class="card" class:done={card?.isDone}>
 	<div class="status">
 		<img src="./check.svg" alt="" />
 	</div>
-	<h5>1. An Introduction to JavaScript</h5>
+	<h5>{card?.title}</h5>
 	<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, tempore.</p> -->
 </div>
 

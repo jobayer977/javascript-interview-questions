@@ -2,7 +2,7 @@
 	<div class="hero-blk">
 		<div class="hero_info_blk">
 			<div class="flex justify-center">
-				<img class="h-36" src="./logo.svg" alt="" />
+				<img class="h-36" src="/logo.svg" alt="" />
 			</div>
 			<h1>Decode Javascript</h1>
 			<p>

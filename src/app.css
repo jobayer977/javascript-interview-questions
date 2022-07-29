@@ -4,6 +4,8 @@
 @tailwind utilities;
 body {
 	font-family: 'Barlow', sans-serif;
+	width: 100% !important;
+	min-height: 100% !important;
 }
 * {
 	box-sizing: border-box;

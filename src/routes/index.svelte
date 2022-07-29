@@ -1,56 +1,58 @@
 <script>
 	import Card from '../components/Card.svelte';
+	const contents = {
+		'01. An Introduction': [
+			{
+				title: 'An Introduction to JavaScript',
+				fileName: '1.1-an-introduction'
+			},
+			{
+				title: 'Variables',
+				fileName: '1.2-variables'
+			},
+			{
+				title: 'Functions',
+				fileName: '1.3-functions'
+			},
+			{
+				title: 'Arrays',
+				fileName: '1.4-arrays'
+			}
+		],
+		'02. JavaScript Fundamentals': [
+			{
+				title: 'An Introduction to JavaScript',
+				fileName: '1.1-an-introduction'
+			},
+			{
+				title: 'Variables',
+				fileName: '1.2-variables'
+			},
+			{
+				title: 'Functions',
+				fileName: '1.3-functions'
+			},
+			{
+				title: 'Arrays',
+				fileName: '1.4-arrays'
+			}
+		]
+	};
 </script>
 
 <div class="container">
-	<div class="section">
-		<h4>01. An introduction</h4>
-		<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
-			<Card isDone />
-			<Card isDone />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
+	{#each Object.entries(contents) as content, index}
+		<div class="section">
+			<h4>{content[0]}</h4>
+			<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
+				{#each content[1] as card}
+					<a href={`/en/${card?.fileName}`}>
+						<Card {card} />
+					</a>
+				{/each}
+			</div>
 		</div>
-	</div>
-	<div class="section">
-		<h4>02. An introduction</h4>
-		<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-		</div>
-	</div>
-	<div class="section">
-		<h4>03. An introduction</h4>
-		<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-		</div>
-	</div>
+	{/each}
 </div>
 
 <style lang="postcss">

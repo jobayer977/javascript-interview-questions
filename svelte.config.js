@@ -14,7 +14,9 @@ const config = {
 		preprocess({
 			postcss: true
 		}),
-		mdsvex({})
+		mdsvex({
+			extensions: ['.svelte.md', '.md', '.svx']
+		})
 	]
 };
 export default config;
