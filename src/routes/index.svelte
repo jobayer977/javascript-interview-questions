@@ -4,8 +4,8 @@
 	export let payload;
 </script>
 
-<InnerHeader />
 <div class="container">
+	<InnerHeader />
 	{#each payload as content, index}
 		<div class="section">
 			<h4>{content?.name}</h4>
@@ -29,7 +29,7 @@
 			font-size: 1.5rem;
 			line-height: 42px;
 			margin-top: 10px;
-			margin-bottom: 35px;
+			@apply lg:mb-7 mb-3;
 			color: #fffffffa;
 		}
 	}

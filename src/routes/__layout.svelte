@@ -4,7 +4,5 @@
 	import '../styles/markdown-dark.css';
 </script>
 
-<div class="container">
-	<slot />
-</div>
+<slot />
 <Footer />

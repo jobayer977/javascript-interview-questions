@@ -10,9 +10,9 @@
 	font-size: 16px;
 	line-height: 1.5;
 	word-wrap: break-word;
-	margin: 1.75rem 0.875rem 1rem;
-	padding: 2rem 1.5rem;
 	border-radius: 0.5rem;
+	@apply lg:my-10 my-5;
+	@apply lg:py-[2rem] lg:px-[1.5rem] py-[1rem] px-[1rem];
 }
 .markdown-body--dark .octicon {
 	display: inline-block;
@@ -68,8 +68,10 @@
 	margin: 0.67em 0;
 	font-weight: 600;
 	padding-bottom: 0.3em;
-	font-size: 2em;
 	border-bottom: 1px solid #21262d;
+	font-size: 2em;
+
+	/* @apply lg:text-[2em] text-[1em]; */
 }
 .markdown-body--dark mark {
 	background-color: rgba(187, 128, 9, 0.15);
