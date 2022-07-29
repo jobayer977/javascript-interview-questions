@@ -1,10 +1,12 @@
 <div class="container">
 	<div class="hero-blk">
 		<div class="hero_info_blk">
-			<div class="flex justify-center">
-				<img class="h-36" src="/logo.svg" alt="" />
-			</div>
-			<h1>Decode Javascript</h1>
+			<a href="/">
+				<div class="flex justify-center">
+					<img class="h-36" src="/logo.svg" alt="" />
+				</div>
+				<h1>Decode Javascript</h1>
+			</a>
 			<p>
 				Free posts, guides, tutorials, and newsletters to help you learn in-demand skills, get
 				hired, and advance your career.
@@ -20,15 +22,14 @@
 			margin: 0px;
 			font-family: Barlow, sans-serif;
 			font-weight: 700;
-			font-size: 50px;
+			font-size: 2rem;
 			line-height: 65px;
 			margin: 0;
-			color: rgb(0, 0, 0);
 		}
 		p {
 			font-family: Barlow, sans-serif;
 			font-weight: 300;
-			font-size: 28px;
+			font-size: 2rem;
 			line-height: 38px;
 			margin-top: 15px;
 		}

@@ -3,37 +3,38 @@
 	const contents = {
 		'01. An Introduction': [
 			{
-				title: 'An Introduction to JavaScript',
-				fileName: '1.1-an-introduction'
+				title: 'What are the possible ways to create objects in JavaScript',
+				fileName: '1.1-an-introduction',
+				isDone: true
 			},
 			{
-				title: 'Variables',
+				title: 'What is a prototype chain',
 				fileName: '1.2-variables'
 			},
 			{
-				title: 'Functions',
+				title: 'What is the difference between Call, Apply and Bind',
 				fileName: '1.3-functions'
 			},
 			{
-				title: 'Arrays',
+				title: 'What is JSON and its common operations',
 				fileName: '1.4-arrays'
 			}
 		],
 		'02. JavaScript Fundamentals': [
 			{
-				title: 'An Introduction to JavaScript',
+				title: 'What is the purpose of the array slice method',
 				fileName: '1.1-an-introduction'
 			},
 			{
-				title: 'Variables',
+				title: 'What is the purpose of the array splice method',
 				fileName: '1.2-variables'
 			},
 			{
-				title: 'Functions',
+				title: 'What is the difference between slice and splice',
 				fileName: '1.3-functions'
 			},
 			{
-				title: 'Arrays',
+				title: 'How do you compare Object and Map',
 				fileName: '1.4-arrays'
 			}
 		]
@@ -45,9 +46,9 @@
 		<div class="section">
 			<h4>{content[0]}</h4>
 			<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
-				{#each content[1] as card}
+				{#each content[1] as card, index}
 					<a href={`/en/${card?.fileName}`}>
-						<Card {card} />
+						<Card {card} {index} />
 					</a>
 				{/each}
 			</div>
@@ -61,9 +62,8 @@
 		h4 {
 			font-family: Barlow, sans-serif;
 			font-weight: 700;
-			font-size: 32px;
+			font-size: 1.5rem;
 			line-height: 42px;
-			color: rgb(0, 0, 0);
 			grid-column: 1 / 5;
 			margin-top: 10px;
 			margin-bottom: 35px;
