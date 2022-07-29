@@ -1,21 +1,19 @@
 import adapter from '@sveltejs/adapter-node';
+// import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.svelte.md', '.md', '.svx'],
+	extensions: ['.svelte', '.md'],
 	kit: {
-		adapter: adapter(),
-		package: {
-			files: (file) => !file.includes('site')
-		}
+		adapter: adapter()
 	},
 	preprocess: [
 		preprocess({
 			postcss: true
 		}),
 		mdsvex({
-			extensions: ['.svelte.md', '.md', '.svx'],
+			extensions: ['.svelte', '.md'],
 			highlight: {
 				alias: { js: 'javascript' }
 			},
