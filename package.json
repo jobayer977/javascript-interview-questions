@@ -2,6 +2,7 @@
 	"name": "js.jobayer.dev",
 	"version": "0.0.1",
 	"scripts": {
+		"start": "vite dev",
 		"dev": "vite dev",
 		"build": "vite build",
 		"package": "svelte-kit package",
@@ -18,6 +19,8 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-static": "^1.0.0-next.38",
 		"@sveltejs/kit": "next",
+		"@svelteness/kit-docs": "^0.24.0",
+		"@tailwindcss/typography": "^0.5.4",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"autoprefixer": "^10.4.7",
@@ -37,5 +40,8 @@
 		"typescript": "^4.7.4",
 		"vite": "^3.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"nogimo": "^1.0.8"
+	}
 }

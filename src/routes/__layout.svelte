@@ -1,9 +1,8 @@
 <script>
-	import Header from '../components/Header.svelte';
 	import '../app.css';
 	import Footer from '../components/Footer.svelte';
+	import '../styles/markdown-dark.css';
 </script>
 
-<Header />
 <slot />
 <Footer />

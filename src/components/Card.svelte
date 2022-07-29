@@ -1,24 +1,26 @@
-<script>
-	export let isDone = false;
+<script lang="ts">
+	export let card: any = {};
+	export let index = 0;
 </script>
 
-<div class="card" class:done={isDone}>
+<div class="card" class:done={card?.isDone}>
 	<div class="status">
 		<img src="./check.svg" alt="" />
 	</div>
-	<h5>1. An Introduction to JavaScript</h5>
-	<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, tempore.</p> -->
+	<h5>{index + 1 + '  '}.{card?.title}</h5>
 </div>
 
 <style lang="postcss">
 	.card {
-		background-color: rgb(255, 255, 255);
-		border-radius: 3px;
-		border-width: 3px;
+		min-height: 150px;
+		background: #161627;
+		border-radius: 0.5rem;
+		box-shadow: 0 1px 2px #0000003d, 0 1px 3px #0000001f;
 		padding: 15px;
-		@apply rounded-md   border-solid relative;
+		border-width: 3px;
+		@apply border-solid relative border-white border-opacity-10 transition-all hover:scale-105;
 		.status {
-			@apply absolute right-1 top-1 h-5;
+			@apply absolute right-3 top-3 h-5;
 			img {
 				@apply h-full w-full opacity-10;
 				filter: grayscale(100%);
@@ -26,27 +28,26 @@
 		}
 		h5 {
 			font-family: Barlow, sans-serif;
-			font-weight: 700;
-			font-size: 18px;
+			font-weight: 500;
+			font-size: 1rem;
 			line-height: 26px;
-			color: rgb(0, 0, 0);
 			text-decoration: none;
 			cursor: pointer;
+			padding-right: 20px;
 		}
 		p {
 			font-family: Barlow, sans-serif;
 			font-weight: 300;
 			font-size: 16px;
 			line-height: 24px;
-			color: rgb(55, 63, 73);
+			color: ffffffc7;
 			margin: 10px 0px !important;
 		}
 		&.done {
-			@apply border-black;
+			@apply border-white border-opacity-90;
 			.status {
 				img {
-					@apply opacity-100 fill-red-600;
-					filter: grayscale(0%);
+					@apply opacity-90 fill-red-600;
 				}
 				svg {
 					@apply hidden;

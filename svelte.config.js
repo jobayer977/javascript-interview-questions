@@ -14,7 +14,13 @@ const config = {
 		preprocess({
 			postcss: true
 		}),
-		mdsvex({})
+		mdsvex({
+			extensions: ['.svelte.md', '.md', '.svx'],
+			highlight: {
+				alias: { js: 'javascript' }
+			},
+			layout: './src/lib/BlogLayout.svelte'
+		})
 	]
 };
 export default config;
