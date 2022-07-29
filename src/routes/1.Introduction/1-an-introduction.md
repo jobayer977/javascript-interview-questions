@@ -1,4 +1,31 @@
+---
+title:  What is the purpose of the array splice method?
+questions: [
+      {
+         question: 'What is the difference ?',
+         answer: ['Answer 1', 'Answer 2', 'Answer 3'],
+         correctAnswer: 'Answer 1'
+      },
+      {
+         question: 'What is the difference ?',
+         answer: ['Answer 1', 'Answer 2', 'Answer 3'],
+         correctAnswer: 'Answer 1'
+      }
+   ]
+---
 
+
+
+# What is the purpose of the array splice method?
+``` js
+const arrayToCSV = (arr, delimiter = ',') =>
+  arr
+    .map(v =>
+      v.map(x => (isNaN(x) ? `"${x.replace(/"/g, '""')}"` : x)).join(delimiter)
+    )
+    .join('\n');
+```
+"They said it was free..."
 ### Notes
 - I am a triage member in the Babel org, core member of Svelte.
 - I understand well about the topic of Babel and AST
@@ -15,16 +42,12 @@
    - serialize AST
    - babel helpers and polyfills
       - how babel helper, polyfill works
-
 ---
 The Hitchhiker's Guide to Abstract Syntax Tree
 ---
 We have seen talks on using codemods to quickly refactor a large codebase. Inside codemods is Abstract Syntax Tree (AST), a mysterious yet powerful term.
-
 In this talk, I will be guiding you through the fundamentals of AST, showing tips and tricks to traverse and manipulate an AST.
-
 At the end of the journey, you will have a better understanding of how AST works and be much more confident in writing codemods.
-
 ### Notes
 - I am a triage member in the Babel org and core member of Svelte. I understand well about the topic of Babel and AST
 - I've written quite a few articles about AST:
@@ -46,62 +69,36 @@ At the end of the journey, you will have a better understanding of how AST works
 ---
 Implementing a parser
 ---
-
-
-
-
 ---
 Connecting the dots with Open Source
 ---
 Do all the conference talks relevant to you? Should you pay attention to all of them?
-
 Well, in a recent discussion about a Svelte RFC, it reminded me of a meetup talk a year ago on how to style a kanban board.
-
 In this lightning talk, I'll share 2 seemingly unrelated stories, and how they are connected.
-
 ### Notes
-
-
 ---
-
-
 ```
 Li Hau is an expert <b> engineer  </b>
-
 I built my version of JavaScript. I created a new operator, forked the Babel parser and wrote a Babel plugin to transpile it to browser-compatible JavaScript.
 I will share every step 
 ```
-
-
 ---
 I don't have any special request. It is my 2020 new year resolution to speak at a big conference like JSHeroes. Should you decide not to pick my talk, if possible, I would like feedback so that I can improve on my CFP.
-
-
 ---
 Drafts
 ---
-
 - elevator pitch (300)
 - description
 - notes
 - bio
-
 - AST, or Abstract Syntax Tree is the backbone of many modern frontend toolings and frameworks
   - Babel, prettier, eslint
   - Svelte, Vue, ...
-
 Step inside your everyday JavaScript tools, and you’ll find the abstract syntax tree. With the AST, let’s discover how our tools work, how we can extend them, and build a better understanding of computer language along the way.
-
-
 Take a tour into the process of creating and experimenting with new JavaScript syntax. Through the journey, we will learn how to parse code into AST (Abstract Syntax Tree), how babel plugin works, and how to write a babel polyfill.
-
 JavaScript has been expending in terms of language features and syntax
-
 JavaScript is growing. 
-
 Everyone uses Babel to modern JavaScript syntax.
-
-
 <script>
 console.log('H')
    </script>

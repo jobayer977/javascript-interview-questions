@@ -15,7 +15,11 @@ const config = {
 			postcss: true
 		}),
 		mdsvex({
-			extensions: ['.svelte.md', '.md', '.svx']
+			extensions: ['.svelte.md', '.md', '.svx'],
+			highlight: {
+				alias: { js: 'javascript' }
+			},
+			layout: './src/lib/BlogLayout.svelte'
 		})
 	]
 };

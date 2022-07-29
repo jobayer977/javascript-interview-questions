@@ -12,7 +12,7 @@
 
 <style lang="postcss">
 	.card {
-		min-height: 100px;
+		min-height: 150px;
 		background: #161627;
 		border-radius: 0.5rem;
 		box-shadow: 0 1px 2px #0000003d, 0 1px 3px #0000001f;
@@ -28,11 +28,12 @@
 		}
 		h5 {
 			font-family: Barlow, sans-serif;
-			font-weight: 700;
+			font-weight: 500;
 			font-size: 1rem;
 			line-height: 26px;
 			text-decoration: none;
 			cursor: pointer;
+			padding-right: 20px;
 		}
 		p {
 			font-family: Barlow, sans-serif;
