@@ -1,11 +1,11 @@
 import path from 'path';
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function GET() {
+	const payload: any = [];
 	const CWD = process.cwd();
 	const ROUTES_DIR = path.resolve(CWD, 'src/routes');
 	const folders = await import('fs');
 	const foldersPaths = folders.readdirSync(ROUTES_DIR);
-	const payload: any = [];
 	await Promise.all(
 		foldersPaths.map(async (folder: any) => {
 			if (isNaN(folder.charAt(0))) return;
