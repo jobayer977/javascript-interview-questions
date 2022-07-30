@@ -6,7 +6,7 @@
 
 <div class="container " style="min-height: 75vh">
 	<InnerHeader />
-	{#each payload as content, index}
+	{#each payload || [] as content, index}
 		<div class="section">
 			<h4>{content?.name}</h4>
 			<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
