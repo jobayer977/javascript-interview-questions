@@ -22,48 +22,50 @@
 	};
 </script>
 
-<div class="quiz ">
-	{#if currentQuestionIndex <= questions.length - 1}
-		<p class="text-lg font-medium pb-2">{currentQuestionIndex + 1}/{questions?.length}</p>
-		<h2>{currentQuestion?.question}</h2>
-		<div class="options">
-			{#each currentQuestion?.answer || [] as answer, index}
-				<div
-					class="option"
-					class:selected={answer === selectedAnswer}
-					on:click={() => {
-						selectedAnswer = answer;
-					}}
-				>
-					<span>{getAlphabets(index)}</span>
-					<h4>{answer}</h4>
-				</div>
-			{/each}
-		</div>
-		<div class="actions">
-			<button class="btn submit" on:click={onSubmit}>Next</button>
-		</div>
-	{:else}
-		<div class="result">
-			<h2>Result</h2>
-			{#each questions as question, index}
-				<div class="card mb-4">
-					<h4 class="text-base font-medium">{index + 1}. {question?.question}</h4>
-					<p
-						class="ml-3 text-sm"
-						class:text-red-600={!question?.isCorrect}
-						class:text-green-600={question?.isCorrect}
+{#if questions.length}
+	<div class="quiz ">
+		{#if currentQuestionIndex <= questions.length - 1}
+			<p class="text-lg font-medium pb-2">{currentQuestionIndex + 1}/{questions?.length}</p>
+			<h2>{currentQuestion?.question}</h2>
+			<div class="options">
+				{#each currentQuestion?.answer || [] as answer, index}
+					<div
+						class="option"
+						class:selected={answer === selectedAnswer}
+						on:click={() => {
+							selectedAnswer = answer;
+						}}
 					>
-						Ans: {question.correctAnswer}
-					</p>
-				</div>
-			{/each}
-			<div class="actions">
-				<button class="btn reset" on:click={onReset}>Reset</button>
+						<span>{getAlphabets(index)}</span>
+						<h4>{answer}</h4>
+					</div>
+				{/each}
 			</div>
-		</div>
-	{/if}
-</div>
+			<div class="actions">
+				<button class="btn submit" on:click={onSubmit}>Next</button>
+			</div>
+		{:else}
+			<div class="result">
+				<h2>Result</h2>
+				{#each questions as question, index}
+					<div class="card mb-4">
+						<h4 class="text-base font-medium">{index + 1}. {question?.question}</h4>
+						<p
+							class="ml-3 text-sm"
+							class:text-red-600={!question?.isCorrect}
+							class:text-green-600={question?.isCorrect}
+						>
+							Ans: {question.correctAnswer}
+						</p>
+					</div>
+				{/each}
+				<div class="actions">
+					<button class="btn reset" on:click={onReset}>Reset</button>
+				</div>
+			</div>
+		{/if}
+	</div>
+{/if}
 
 <style lang="postcss">
 	.quiz {

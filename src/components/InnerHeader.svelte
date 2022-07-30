@@ -1,11 +1,11 @@
 <div class="hero-blk">
-	<a href="/" class="hero_info_blk">
-		<div class="flex justify-center lg:mr-10">
+	<a href="/" class="hero_info_blk my-5">
+		<div class="flex justify-center lg:mr-5 ">
 			<img class="h-16 lg:h-24" src="/logo.svg" alt="" />
 		</div>
 		<div>
 			<h1>Decode Javascript</h1>
-			<p>Join 100,000+ tech professionals. Unsubscribe anytime.</p>
+			<p>Let's confident in a Javascript</p>
 		</div>
 	</a>
 	<!-- {#if $page.url.pathname === '/'}
