@@ -1,21 +1,21 @@
-// import adapter from '@sveltejs/adapter-cloudflare';
-// import adapter from '@sveltejs/adapter-node';
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.md'],
+	extensions: ['.svelte', '.svelte.md', '.md', '.svx'],
 	kit: {
-		adapter: adapter({ precompress: true }),
-		prerender: { default: true }
+		adapter: adapter(),
+		package: {
+			files: (file) => !file.includes('site')
+		}
 	},
 	preprocess: [
 		preprocess({
 			postcss: true
 		}),
 		mdsvex({
-			extensions: ['.svelte', '.md'],
+			extensions: ['.svelte.md', '.md', '.svx'],
 			highlight: {
 				alias: { js: 'javascript' }
 			},
