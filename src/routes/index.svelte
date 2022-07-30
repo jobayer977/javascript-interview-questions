@@ -1,18 +1,20 @@
 <script lang="ts">
+	import SeoHead from '../components/SeoHead.svelte';
 	import Card from '../components/Card.svelte';
 	import InnerHeader from '../components/InnerHeader.svelte';
 	export let payload: any[] = [];
 </script>
 
+<SeoHead />
 <div class="container " style="min-height: 75vh">
 	<InnerHeader />
 	{#if payload?.length}
 		{#each payload || [] as content, index}
 			<div class="section">
-				<h4>{content?.name}</h4>
+				<h4>{content?.folderName}</h4>
 				<div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
 					{#each content?.topics as card, index}
-						<a href={`/${content?.name}/${card?.fileName}`}>
+						<a href={`/${content?.folderName}/${card?.fileName}`}>
 							<Card {card} {index} />
 						</a>
 					{/each}

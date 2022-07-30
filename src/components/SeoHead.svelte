@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page, session } from '$app/stores';
-	export let title = 'LOOX | Your Fashion Expert';
-	export let description = `Loox.com.bd is Bangladesh's first live Shopping platform aimed at making shopping engaging, social and real.`;
+	export let title = 'Decode Javascript';
+	export let description = `Decode Javascript interview questions and answers`;
 	export let ogTitle = title;
 	let origin = $session.origin;
-	export let ogImage = $session.origin + '/loox-logo.png';
+	export let ogImage = $session.origin + '/logo.png';
 	export let ogUrl = $page.url.href;
 	export let ogDescription = description;
 </script>

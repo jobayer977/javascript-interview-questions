@@ -14,7 +14,7 @@ export async function GET() {
 				if (isNaN(folder.charAt(0))) return;
 				const files = folders.readdirSync(path.resolve(ROUTES_DIR, folder));
 				const content = {};
-				content.name = folder;
+				content.folderName = folder;
 				content.topics = [];
 				await Promise.all(
 					files.map(async (file) => {
@@ -23,7 +23,7 @@ export async function GET() {
 						const result = metadataParser(fileContentString)?.metadata;
 						const topic = {
 							title: result?.title,
-							fileName: file.split('.')[0],
+							fileName: file.replace('.md', ''),
 							questions: result?.questions
 						};
 						content.topics.push(topic);
