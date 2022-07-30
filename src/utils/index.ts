@@ -13,3 +13,12 @@ export const capitalize = (str: string) => {
 
 export const slugFromPath = (path: any) =>
 	path.match(/([\w-]+)\.(svelte\.md|md|svx)/i)?.[1] ?? null;
+
+// get alpabats by index
+export const getAlphabets = (index: number) => {
+	const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	return alphabets.charAt(index);
+};
+
+// remove string 1st character
+export const removeFirstCharacter = (str: string) => str.slice(1);

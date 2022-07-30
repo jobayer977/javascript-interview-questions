@@ -99,6 +99,4 @@ Take a tour into the process of creating and experimenting with new JavaScript s
 JavaScript has been expending in terms of language features and syntax
 JavaScript is growing. 
 Everyone uses Babel to modern JavaScript syntax.
-<script>
-console.log('H')
-   </script>
+

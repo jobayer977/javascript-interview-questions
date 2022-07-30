@@ -2,20 +2,17 @@
 title:  What is the purpose of the array splice method?
 questions: [
       {
-         question: 'What is the difference ?',
-         answer: ['Answer 1', 'Answer 2', 'Answer 3'],
-         correctAnswer: 'Answer 1'
+         question: '1+2 ?',
+         answer: ['3', '4', '5'],
+         correctAnswer: '3'
       },
       {
-         question: 'What is the difference ?',
-         answer: ['Answer 1', 'Answer 2', 'Answer 3'],
-         correctAnswer: 'Answer 1'
-      }
+         question: '2+2 ?',
+         answer: ['2', '5', '4'],
+         correctAnswer: '4'
+      },
    ]
 ---
-
-
-
 # What is the purpose of the array splice method?
 ``` js
 const arrayToCSV = (arr, delimiter = ',') =>
@@ -99,6 +96,4 @@ Take a tour into the process of creating and experimenting with new JavaScript s
 JavaScript has been expending in terms of language features and syntax
 JavaScript is growing. 
 Everyone uses Babel to modern JavaScript syntax.
-<script>
-console.log('H')
-   </script>
+

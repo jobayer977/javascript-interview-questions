@@ -4,15 +4,15 @@
 </script>
 
 <div class="card" class:done={card?.isDone}>
-	<div class="status">
+	<!-- <div class="status">
 		<img src="./check.svg" alt="" />
-	</div>
+	</div> -->
 	<h5>{index + 1 + '  '}.{card?.title}</h5>
 </div>
 
 <style lang="postcss">
 	.card {
-		min-height: 150px;
+		@apply lg:min-h-[100px];
 		background: #161627;
 		border-radius: 0.5rem;
 		box-shadow: 0 1px 2px #0000003d, 0 1px 3px #0000001f;

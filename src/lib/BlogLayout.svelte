@@ -3,6 +3,7 @@
 	import InnerHeader from '../components/InnerHeader.svelte';
 	import Quiz from '../components/Quiz.svelte';
 	export let title = '';
+	export let questions = '';
 </script>
 
 <SeoHead {title} />
@@ -18,7 +19,7 @@
 			<div class="text-left">
 				<h2 class="text-[2rem] font-medium mb-10">Exercises and Quizzes</h2>
 			</div>
-			<Quiz />
+			<Quiz {questions} />
 		</div>
 	</div>
 </div>

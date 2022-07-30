@@ -2,6 +2,8 @@
 	import SeoHead from '../components/SeoHead.svelte';
 	import Card from '../components/Card.svelte';
 	import InnerHeader from '../components/InnerHeader.svelte';
+	import { onMount } from 'svelte';
+	import { topicsTrack } from '../store/topics.store';
 	export let payload: any[] = [];
 </script>
 
@@ -26,14 +28,14 @@
 
 <style lang="postcss">
 	.section {
-		@apply py-7;
+		@apply py-2;
 		h4 {
 			font-family: Barlow, sans-serif;
 			font-weight: 600;
 			font-size: 1.5rem;
 			line-height: 42px;
 			margin-top: 10px;
-			@apply lg:mb-7 mb-3;
+			@apply mb-3;
 			color: #fffffffa;
 		}
 	}

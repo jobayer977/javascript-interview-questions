@@ -1,34 +1,68 @@
-<script>
+<script lang="ts">
+	import type { IQuestion } from '../models/interfaces';
+	import { getAlphabets } from '../utils/index';
+	export let questions: IQuestion[] = [];
+	let selectedAnswer: string = '';
+	$: currentQuestionIndex = 0;
+	$: currentQuestion = questions[currentQuestionIndex];
+	const onSubmit = () => {
+		if (currentQuestionIndex <= questions.length - 1) {
+			currentQuestion.isCorrect = currentQuestion.correctAnswer === selectedAnswer;
+			questions[currentQuestionIndex] = currentQuestion;
+			currentQuestionIndex = currentQuestionIndex + 1;
+		}
+		selectedAnswer = '';
+	};
+	const onReset = () => {
+		currentQuestionIndex = 0;
+		questions = questions.map((question) => {
+			question.isCorrect = false;
+			return question;
+		});
+	};
 </script>
 
 <div class="quiz ">
-	<p class="text-lg font-medium pb-2">1/2</p>
-	<h2>What is the purpose of the array splice method?</h2>
-	<div class="options">
-		<div class="option">
-			<span>A</span>
-			<h4>Removes array elements</h4>
+	{#if currentQuestionIndex <= questions.length - 1}
+		<p class="text-lg font-medium pb-2">{currentQuestionIndex + 1}/{questions?.length}</p>
+		<h2>{currentQuestion?.question}</h2>
+		<div class="options">
+			{#each currentQuestion?.answer || [] as answer, index}
+				<div
+					class="option"
+					class:selected={answer === selectedAnswer}
+					on:click={() => {
+						selectedAnswer = answer;
+					}}
+				>
+					<span>{getAlphabets(index)}</span>
+					<h4>{answer}</h4>
+				</div>
+			{/each}
 		</div>
-		<div class="option selected">
-			<span>B</span>
-			<h4>Overwrites the original array.</h4>
+		<div class="actions">
+			<button class="btn submit" on:click={onSubmit}>Next</button>
 		</div>
-		<div class="option">
-			<span>C</span>
-			<h4>Overwrites the original array.</h4>
+	{:else}
+		<div class="result">
+			<h2>Result</h2>
+			{#each questions as question, index}
+				<div class="card mb-4">
+					<h4 class="text-base font-medium">{index + 1}. {question?.question}</h4>
+					<p
+						class="ml-3 text-sm"
+						class:text-red-600={!question?.isCorrect}
+						class:text-green-600={question?.isCorrect}
+					>
+						Ans: {question.correctAnswer}
+					</p>
+				</div>
+			{/each}
+			<div class="actions">
+				<button class="btn reset" on:click={onReset}>Reset</button>
+			</div>
 		</div>
-		<div class="option">
-			<span>D</span>
-			<h4>
-				Callback function once for each array element. Callback function once for each array
-				element.
-			</h4>
-		</div>
-	</div>
-	<div class="actions">
-		<button class="btn submit">Next</button>
-		<!-- <button class="btn reset">Reset</button> -->
-	</div>
+	{/if}
 </div>
 
 <style lang="postcss">
