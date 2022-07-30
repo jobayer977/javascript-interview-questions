@@ -69,9 +69,9 @@
 	font-weight: 600;
 	padding-bottom: 0.3em;
 	border-bottom: 1px solid #21262d;
-	font-size: 2em;
+	/* font-size: 2em; */
 
-	/* @apply lg:text-[2em] text-[1em]; */
+	@apply lg:text-[2em] text-[1.2em];
 }
 .markdown-body--dark mark {
 	background-color: rgba(187, 128, 9, 0.15);
@@ -226,8 +226,9 @@
 .markdown-body--dark h2 {
 	font-weight: 600;
 	padding-bottom: 0.3em;
-	font-size: 1.5em;
 	border-bottom: 1px solid #21262d;
+	/* font-size: 1.5em; */
+	@apply lg:text-[1.5em] text-[1.2em];
 }
 .markdown-body--dark h3 {
 	font-weight: 600;
