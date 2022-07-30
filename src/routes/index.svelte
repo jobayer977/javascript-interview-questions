@@ -4,7 +4,6 @@
 	export let payload: any[] = [];
 </script>
 
-<a href="/1.Introduction/1-an-introduction">Demo</a>
 <div class="container " style="min-height: 75vh">
 	<InnerHeader />
 	{#if payload?.length}
