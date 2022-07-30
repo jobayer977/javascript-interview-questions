@@ -3,7 +3,7 @@
 	export let index = 0;
 </script>
 
-<div class="card" class:done={!card?.isDone}>
+<div class="card" class:done={card?.isDone}>
 	<div class="status">
 		<img src="./check.svg" alt="" />
 	</div>
