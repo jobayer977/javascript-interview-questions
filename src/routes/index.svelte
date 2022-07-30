@@ -4,7 +4,7 @@
 	export let payload;
 </script>
 
-<div class="container">
+<div class="container " style="min-height: 75vh">
 	<InnerHeader />
 	{#each payload as content, index}
 		<div class="section">

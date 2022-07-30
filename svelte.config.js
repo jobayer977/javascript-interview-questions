@@ -11,15 +11,12 @@ const config = {
 		preprocess({
 			postcss: true
 		}),
-		// mdsvex({
-		// 	extensions: ['.svelte.md', '.md', '.svx'],
-		// 	highlight: {
-		// 		alias: { js: 'javascript' }
-		// 	},
-		// 	layout: './src/lib/BlogLayout.svelte'
-		// })
 		mdsvex({
-			extensions: ['.md']
+			extensions: ['.svelte.md', '.md', '.svx'],
+			highlight: {
+				alias: { js: 'javascript' }
+			},
+			layout: './src/lib/BlogLayout.svelte'
 		})
 	]
 };

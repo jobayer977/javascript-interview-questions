@@ -3,7 +3,10 @@ import { sveltekit } from '@sveltejs/kit/vite';
 const config = {
 	plugins: [sveltekit()],
 	server: {
-		port: 3000
+		port: 3000,
+		fs: {
+			strict: false
+		}
 	},
 	define: {
 		'process.env.VITE_BUILD_TIME': JSON.stringify(new Date().toISOString())
