@@ -10,3 +10,6 @@ export const capitalize = (str: string) => {
 		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 	});
 };
+
+export const slugFromPath = (path: any) =>
+	path.match(/([\w-]+)\.(svelte\.md|md|svx)/i)?.[1] ?? null;
