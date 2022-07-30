@@ -8,8 +8,6 @@ body {
 	min-height: 100% !important;
 	background: #09091b;
 	color: #fffffffa;
-	opacity: 0;
-	background: black;
 }
 * {
 	box-sizing: border-box;
