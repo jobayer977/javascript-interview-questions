@@ -7,7 +7,7 @@
 	<!-- <div class="status">
 		<img src="./check.svg" alt="" />
 	</div> -->
-	<h5>{index + 1 + '  '}.{card?.title}</h5>
+	<h5>{index + 1 + '  '}. {card?.title}</h5>
 </div>
 
 <style lang="postcss">

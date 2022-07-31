@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
+import relativeImages from 'mdsvex-relative-images';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.md', '.svx'],
@@ -19,7 +20,8 @@ const config = {
 			highlight: {
 				alias: { js: 'javascript' }
 			},
-			layout: './src/lib/BlogLayout.svelte'
+			layout: './src/lib/BlogLayout.svelte',
+			remarkPlugins: [relativeImages]
 		})
 	]
 };

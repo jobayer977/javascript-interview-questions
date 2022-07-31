@@ -18,7 +18,7 @@ export async function GET() {
 				content.topics = [];
 				await Promise.all(
 					files.map(async (file) => {
-						const filePath = `${ROUTES_DIR}/${folder}/${file}`;
+						const filePath = `${ROUTES_DIR}/${folder}/${file}/index.md`;
 						const fileContentString = await readFileSync(filePath, 'utf8');
 						const result = metadataParser(fileContentString)?.metadata;
 						const topic = {

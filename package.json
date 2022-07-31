@@ -4,6 +4,7 @@
 	"scripts": {
 		"start": "vite dev",
 		"dev": "vite dev",
+		"sync": "node ./scripts/makereadme.js",
 		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
