@@ -1,5 +1,5 @@
 ---
-title: Optional chaining ?
+title: What is Optional chaining ?
 questions: [
       {
          question: '{ delete user?.name } will return ?',
@@ -9,7 +9,7 @@ questions: [
    ]
 ---
 
-## Optional chaining?
+## What is Optional chaining?
 
 Optional chaining is the safe way to get access to nested object properties even if the intermediary property doesn't exist.
  
