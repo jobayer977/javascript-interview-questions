@@ -5,9 +5,6 @@
 	import { page } from '$app/stores';
 	export let title = '';
 	export let questions = '';
-
-	const url = $page.url.pathname;
-	console.log(url);
 </script>
 
 <SeoHead {title} />
