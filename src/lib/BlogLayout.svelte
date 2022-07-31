@@ -2,14 +2,27 @@
 	import SeoHead from '../components/SeoHead.svelte';
 	import InnerHeader from '../components/InnerHeader.svelte';
 	import Quiz from '../components/Quiz.svelte';
+	import { page } from '$app/stores';
 	export let title = '';
 	export let questions = '';
+
+	const url = $page.url.pathname;
+	console.log(url);
 </script>
 
 <SeoHead {title} />
 <div class="container">
 	<InnerHeader />
 	<article class="blog">
+		<div class="edit-on-github flex justify-end w-full">
+			<a
+				href={`https://github.com/jobayer977/js.jobayer.dev/blob/main/src/routes/${$page.url.pathname}/index.md`}
+				target="_blank"
+				class="flex items-center text-sm underline"
+			>
+				Edit on GitHub <img src="/github.svg" class="ml-2 h-5" />
+			</a>
+		</div>
 		<div class="markdown-body markdown-body--dark">
 			<slot />
 		</div>
