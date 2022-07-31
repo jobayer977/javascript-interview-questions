@@ -1,5 +1,7 @@
  ## Table of Contents
 
-- ### [1.Introduction](/src/routes/1.Introduction)
-   - [01-remark-image-external](/src/routes/1.Introduction/01-remark-image-external/index.md)
-   - [02-babel-macros](/src/routes/1.Introduction/02-babel-macros/index.md)
+- ### [01.Fundamentals](/src/routes/01.Fundamentals)
+   - [01-what-is-javaScript](/src/routes/01.Fundamentals/01-what-is-javaScript/index.md)
+- ### [02.expressions-and-operators](/src/routes/02.expressions-and-operators)
+   - [01-optional-chaining](/src/routes/02.expressions-and-operators/01-optional-chaining/index.md)
+   - [02-what-is-throttling](/src/routes/02.expressions-and-operators/02-what-is-throttling/index.md)
