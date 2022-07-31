@@ -32,7 +32,7 @@ import path from 'path';
 			const [folderName] = x;
 			return `- ### [${x[0]}](/src/routes/${folderName})\n   ${x[1]
 				.map((y) => `- [${y.fileName}](${y?.url})`)
-				.join('\n   ')}`;
+				.join('\n   ')}\n`;
 		})
 		.join('');
 	fs.writeFileSync('./README.md', ` ## Table of Contents\n\n${markdown}`);
