@@ -17,7 +17,8 @@ html {
 	box-sizing: border-box;
 }
 .container {
-	max-width: 1340px;
+	/* max-width: 1340px; */
+	@apply lg:max-w-[900px] max-w-[800px];
 }
 *,
 html {
@@ -150,7 +151,6 @@ pre[class*='language-'] {
 :where(h2, h3, h4, h5, h6) {
 	.icon-link {
 		position: relative;
-
 		&::before {
 			content: '#';
 			position: absolute;
@@ -161,7 +161,6 @@ pre[class*='language-'] {
 			text-decoration: underline;
 		}
 	}
-
 	&:hover .icon-link::before {
 		opacity: 1;
 	}
