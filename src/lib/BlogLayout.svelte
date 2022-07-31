@@ -24,12 +24,14 @@
 			<slot />
 		</div>
 	</article>
-	<div class="grid lg:grid-cols-2 grid-cols-1 gap-2">
-		<div class=" col-span-1">
-			<div class="text-left">
-				<h2 class="text-[2rem] font-medium mb-10">Exercises and Quizzes</h2>
+	{#if questions.length}
+		<div class="grid lg:grid-cols-2 grid-cols-1 gap-2">
+			<div class=" col-span-1">
+				<div class="text-left">
+					<h2 class="text-[2rem] font-medium mb-10">Exercises and Quizzes</h2>
+				</div>
+				<Quiz {questions} />
 			</div>
-			<Quiz {questions} />
 		</div>
-	</div>
+	{/if}
 </div>
