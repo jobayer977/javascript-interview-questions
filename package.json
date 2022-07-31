@@ -33,6 +33,7 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"markdown-yaml-metadata-parser": "^3.0.0",
 		"mdsvex": "^0.10.6",
+		"mdsvex-relative-images": "^1.0.2",
 		"postcss": "^8.4.14",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
