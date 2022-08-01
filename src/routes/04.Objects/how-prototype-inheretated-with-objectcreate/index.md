@@ -1,22 +1,8 @@
 ---
 title: How Prototype inheretated with Object.create() ?
 ---
-
-
 ### How Prototype inheretated with Object.create() ?
-
-```js
-Array.prototype.fillImpl = function (value, start, end) {
-	start = start || 0
-	end = end || this.length
-	for (let i = start; i < end; i++) {
-		this[i] = value
-	}
-}
-```
 `Object.create()` Inherit prototypes from the targeted object and create a new object. the first parameter is for targeted object prototypes and the second parameter is for property descriptors (optional).
-
-
 ```js 
 const extractJSON = {
 	extractProperties: function () {
@@ -41,8 +27,6 @@ const extractJSON = {
 const userInfoProperties = Object.create(extractJSON)
 userInfoProperties.name = 'John'
 userInfoProperties.age = 30
-
 userInfoProperties.extractProperties() //   ['name', 'age']
 userInfoProperties.extractValues() //   ['John', 30]
-
 ```
