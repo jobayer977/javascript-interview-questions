@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 (async function () {
 	const contents = {};
+	// Get Directories
 	function fromDir(startPath, filter) {
 		if (!fs.existsSync(startPath)) {
 			console.log('no dir ', startPath);
