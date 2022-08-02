@@ -1,5 +1,8 @@
-function sum(a, b) {
-	return a + b;
+let counter = 30;
+
+if (counter === 30) {
+	let counter = 31;
+	console.log(counter);
 }
 
-sum(10, 20); // 30
+console.log(counter); // 30
