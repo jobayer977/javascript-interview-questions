@@ -1,12 +1,6 @@
 ---
 title:  What is currying function in JavaScript ?
-questions: [
-      {
-         question: 'Is Javascript asynchronous ?',
-         answer: [true,false],
-         correctAnswer: false
-      },
-   ]
+questions: []
 ---
 ## What is currying function in JavaScript ?
 
