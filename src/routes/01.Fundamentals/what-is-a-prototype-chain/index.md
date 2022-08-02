@@ -9,3 +9,4 @@ Prototypes are the means of inheritance in JavaScript. The prototype of an objec
 This is called prototype chaining or prototype chain in JavaScript.
 
 ![prototype-chain-js](./images/prototype-chain-js.jpg)
+
