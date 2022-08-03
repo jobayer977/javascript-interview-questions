@@ -1,8 +1,3 @@
-function init() {
-	var name = 'Mozilla';
-	function displayName() {
-		console.log(name);
-	}
-	displayName();
-}
-init();
+const myWorker = new Worker('worker.js');
+
+myWorker.postMessage('Hello From Main');
