@@ -1,8 +1,8 @@
-let counter = 30;
-
-if (counter === 30) {
-	let counter = 31;
-	console.log(counter);
+function init() {
+	var name = 'Mozilla';
+	function displayName() {
+		console.log(name);
+	}
+	displayName();
 }
-
-console.log(counter); // 30
+init();
