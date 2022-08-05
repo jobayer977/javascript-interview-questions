@@ -4,4 +4,3 @@
 
 - Write blog about service worker
 - IndexBD
-- 
