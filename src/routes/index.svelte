@@ -12,11 +12,9 @@
 		{#each payload || [] as content, index}
 			<div class="section">
 				<h4>{content?.folderName}</h4>
-				<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
+				<div class="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
 					{#each content?.topics as card, index}
-						<a href={`/${content?.folderName}/${card?.fileName}`}>
-							<Card {card} {index} />
-						</a>
+						<Card {card} {index} {content} />
 					{/each}
 				</div>
 			</div>

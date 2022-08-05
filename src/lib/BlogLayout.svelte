@@ -3,8 +3,22 @@
 	import InnerHeader from '../components/InnerHeader.svelte';
 	import Quiz from '../components/Quiz.svelte';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	export let title = '';
 	export let questions = '';
+	let nextArticleUrl = '';
+	onMount(async () => {
+		try {
+			const response = await fetch(
+				`${$page?.url?.origin}/apis/next-article/${$page?.url?.pathname.split('/')[2]}`
+			).then((res) => res.json());
+			if (!response.fileName) {
+				nextArticleUrl = null;
+			} else {
+				nextArticleUrl = `/${response.folderName}/${response.fileName}`;
+			}
+		} catch (error) {}
+	});
 </script>
 
 <SeoHead {title} />
@@ -17,7 +31,7 @@
 				target="_blank"
 				class="flex items-center text-sm underline"
 			>
-				Edit on GitHub <img src="/github.svg" class="ml-2 h-5" />
+				Edit on GitHub <img src="/github.svg" class="ml-2 h-5" alt="" />
 			</a>
 		</div>
 		<div class="markdown-body markdown-body--dark">
@@ -35,3 +49,25 @@
 		</div>
 	{/if}
 </div>
+<div class="actions">
+	<a
+		href={nextArticleUrl}
+		disabled={!nextArticleUrl}
+		class:hidden={!nextArticleUrl}
+		class="btn submit"
+	>
+		Next Article</a
+	>
+</div>
+
+<style lang="postcss">
+	.actions {
+		@apply flex justify-center my-16;
+		.btn {
+			@apply bg-[#0445AF] disabled:opacity-10 disabled:hidden text-white font-medium px-16 py-4 rounded-md mr-3;
+			&.reset {
+				@apply bg-[#161627] border-[#0445AF] border-2;
+			}
+		}
+	}
+</style>

@@ -1,6 +1,11 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { topicsTrack } from '../store/topics.store';
 	import type { IQuestion } from '../models/interfaces';
 	import { getAlphabets } from '../utils/index';
+	import { onDestroy, onMount } from 'svelte';
+	import { browser } from '$app/env';
+	const fileName: any = $page.url.pathname.split('/')[2];
 	export let questions: IQuestion[] = [];
 	let selectedAnswer: string = '';
 	$: currentQuestionIndex = 0;
@@ -11,6 +16,13 @@
 			questions[currentQuestionIndex] = currentQuestion;
 			currentQuestionIndex = currentQuestionIndex + 1;
 		}
+		if (currentQuestionIndex === questions.length && currentQuestion?.isCorrect) {
+			topicsTrack.update((pv: any) => {
+				if (!pv) return [fileName];
+				if (pv.includes(fileName)) return pv;
+				return [...pv, fileName];
+			});
+		}
 		selectedAnswer = '';
 	};
 	const onReset = () => {
@@ -19,12 +31,30 @@
 			question.isCorrect = false;
 			return question;
 		});
+		isDone = false;
+		topicsTrack.update((pv: any) => {
+			return pv?.filter((t: any) => t !== fileName);
+		});
 	};
+	let isDone: boolean = false;
+	let topicSubscription: any;
+	onMount(() => {
+		topicsTrack.get().subscribe((data) => {
+			console.log(data);
+			if (data?.includes(fileName)) {
+				isDone = true;
+			}
+		});
+	});
+	onDestroy(() => {
+		if (!browser) return;
+		topicSubscription?.unsubscribe();
+	});
 </script>
 
 {#if questions.length}
 	<div class="quiz ">
-		{#if currentQuestionIndex <= questions.length - 1}
+		{#if !isDone && currentQuestionIndex <= questions.length - 1}
 			<p class="text-lg font-medium pb-2">{currentQuestionIndex + 1}/{questions?.length}</p>
 			<h2>{currentQuestion?.question}</h2>
 			<div class="options">

@@ -6,6 +6,7 @@ questions: [
          answer: ['Forever','Until a certain condition is met','A number in milliseconds'],
          correctAnswer: 'A number in milliseconds'
       },
+     
    ]
 ---
 ## What is the purpose of setTimeout() function in JavaScript ?

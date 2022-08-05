@@ -1,28 +1,45 @@
 <script lang="ts">
+	import { browser } from '$app/env';
+	import { topicsTrack } from '../store/topics.store';
+	import { onDestroy, onMount } from 'svelte';
+	export let content: any = {};
 	export let card: any = {};
 	export let index = 0;
+	let isDone = false;
+	let topicSubscription: any;
+	onMount(() => {
+		topicsTrack.get().subscribe((data) => {
+			if (data.includes(card?.fileName)) {
+				isDone = true;
+			}
+		});
+	});
+	onDestroy(() => {
+		if (!browser) return;
+		topicSubscription?.unsubscribe();
+	});
 </script>
 
-<div class="card" class:done={card?.isDone}>
-	<!-- <div class="status">
+<a href={`/${content?.folderName}/${card?.fileName}`} class="card " class:done={isDone}>
+	<div class="status">
 		<img src="./check.svg" alt="" />
-	</div> -->
+	</div>
 	<h5>{index + 1 + '  '}. {card?.title}</h5>
-</div>
+</a>
 
 <style lang="postcss">
 	.card {
-		@apply lg:min-h-[100px];
+		/* @apply lg:min-h-[100px]; */
 		background: #161627;
 		border-radius: 0.5rem;
 		box-shadow: 0 1px 2px #0000003d, 0 1px 3px #0000001f;
 		padding: 15px;
 		border-width: 3px;
-		@apply border-solid relative border-white border-opacity-10 transition-all hover:scale-105;
+		@apply border-solid relative border-white border-opacity-10 transition-all lg:hover:scale-105;
 		.status {
 			@apply absolute right-3 top-3 h-5;
 			img {
-				@apply h-full w-full opacity-10;
+				@apply h-full w-full;
 				filter: grayscale(100%);
 			}
 		}
@@ -44,10 +61,11 @@
 			margin: 10px 0px !important;
 		}
 		&.done {
-			@apply border-white border-opacity-90;
+			@apply border-green-600 bg-blue-opaque border-opacity-50;
 			.status {
 				img {
 					@apply opacity-90 fill-red-600;
+					filter: grayscale(0%);
 				}
 				svg {
 					@apply hidden;
