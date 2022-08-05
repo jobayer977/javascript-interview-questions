@@ -63,11 +63,8 @@
 <style lang="postcss">
 	.actions {
 		@apply flex justify-center my-16;
-		.btn {
-			@apply bg-[#0445AF] disabled:opacity-10 disabled:hidden text-white font-medium px-16 py-4 rounded-md mr-3;
-			&.reset {
-				@apply bg-[#161627] border-[#0445AF] border-2;
-			}
-		}
+	}
+	.actions .btn {
+		@apply bg-[#0445AF] text-white font-medium px-16 py-4 rounded-md mr-3;
 	}
 </style>
