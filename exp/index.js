@@ -1,9 +1,6 @@
-function test(a) {
-	return function () {
-		return function () {
-			return a;
-		};
-	};
+function getNames(...rest,q) {
+	console.log(rest);
 }
-var t = test(1);
-console.dir(t);
+
+console.log(getNames('John', 'Doe', 'Jane', 'Doe'));
+// ['John', 'Doe', 'Jane', 'Doe']
