@@ -1,6 +1,8 @@
-function getNames(...rest,q) {
-	console.log(rest);
-}
+const target = { a: 1, b: 2 };
+const source = { b: 3, c: 4 };
 
-console.log(getNames('John', 'Doe', 'Jane', 'Doe'));
-// ['John', 'Doe', 'Jane', 'Doe']
+const returnedTarget = Object.assign(target, source);
+
+console.log(target); // { a: 1, b: 3, c: 4 }
+
+console.log(returnedTarget); // { a: 1, b: 3, c: 4 }
