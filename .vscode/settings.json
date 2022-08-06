@@ -1,3 +1,11 @@
 {
-	"conventionalCommits.scopes": ["Topic", "staucture", "Sync", "assets", "Removes", "Remove"]
+	"conventionalCommits.scopes": [
+		"Topic",
+		"staucture",
+		"Sync",
+		"assets",
+		"Removes",
+		"Remove",
+		"assets"
+	]
 }

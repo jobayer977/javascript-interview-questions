@@ -1,6 +1,9 @@
-for (let i = 0; i < 10; i++) {
-	if (i !== 5) {
-		continue;
-	}
-	console.log(i);
+function test(a) {
+	return function () {
+		return function () {
+			return a;
+		};
+	};
 }
+var t = test(1);
+console.dir(t);
