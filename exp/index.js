@@ -1,3 +1,2 @@
-const name = 'John';
-
-console.log(uneval(name));
+const  10
+//SyntaxError
