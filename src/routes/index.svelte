@@ -3,11 +3,12 @@
 	import InnerHeader from '../components/InnerHeader.svelte';
 	import SeoHead from '../components/SeoHead.svelte';
 	export let payload: any[] = [];
+	export let totalTopics: number = 0;
 </script>
 
 <SeoHead />
 <div class="container " style="min-height: 75vh">
-	<InnerHeader />
+	<InnerHeader {totalTopics} />
 	{#if payload?.length}
 		{#each payload || [] as content, index}
 			<div class="section">

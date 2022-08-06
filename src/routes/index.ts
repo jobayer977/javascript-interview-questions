@@ -41,13 +41,17 @@ export async function GET() {
 			}
 		};
 	}
+	const totalTopics = payload.reduce((acc, curr) => {
+		return acc + curr.topics.length;
+	}, 0);
 	return {
 		status: 200,
 		headers: {
 			'access-control-allow-origin': '*'
 		},
 		body: {
-			payload
+			payload,
+			totalTopics
 		}
 	};
 }
