@@ -68,4 +68,17 @@
 	.actions .btn {
 		@apply bg-[#0445AF] text-white font-medium px-16 py-4 rounded-md mr-3;
 	}
+
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge add Firefox */
+	.scrollbar-hidden {
+		-ms-overflow-style: none;
+		scrollbar-width: none; /* Firefox */
+	}
+	::-webkit-scrollbar {
+		display: none;
+	}
 </style>
