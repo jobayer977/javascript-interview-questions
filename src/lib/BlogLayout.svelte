@@ -13,10 +13,10 @@
 			const response = await fetch(
 				`${$page.url.origin}/apis/next-article/${paths[0]}/${paths[2]}`
 			).then((res) => res.json());
-			if (!response.name) {
+			if (!response?.name) {
 				nextArticleUrl = null;
 			} else {
-				nextArticleUrl = `/${response?.language}/${response.section}/${response.name}`;
+				nextArticleUrl = `/${response?.language}/${response?.section}/${response?.name}`;
 			}
 		} catch (error) {}
 	});

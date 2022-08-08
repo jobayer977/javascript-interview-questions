@@ -9,7 +9,7 @@
 <SeoHead />
 <div class="container " style="min-height: 75vh">
 	<InnerHeader totalTopics={total} />
-	{#if Object.entries(payload)?.length}
+	{#if payload && Object.entries(payload)?.length}
 		{#each Object.entries(payload) || [] as content, index}
 			<div class="section">
 				<h4>{content[0]}</h4>
