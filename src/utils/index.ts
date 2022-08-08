@@ -1,6 +1,4 @@
 import { browser } from '$app/env';
-import fs from 'fs';
-import path from 'path';
 export const asyncForEach = async (array: any[], callback: any) => {
 	for (let index = 0; index < array.length; index++) {
 		await callback(array[index], index, array);
@@ -28,24 +26,5 @@ export const isUserFullyScrolled = () => {
 		const scrollHeight = document.documentElement.scrollHeight;
 		const clientHeight = document.documentElement.clientHeight;
 		return scrollTop + clientHeight >= scrollHeight;
-	}
-};
-
-export const fromDir = (startPath: string, filter: string, callback: any) => {
-	if (!fs.existsSync(startPath)) {
-		console.log('no dir ', startPath);
-		return;
-	}
-	const files = fs.readdirSync(startPath);
-	for (let i = 0; i < files.length; i++) {
-		const filename = path.join(startPath, files[i]);
-		const stat = fs.lstatSync(filename);
-		if (stat.isDirectory()) {
-			fromDir(filename, filter, (res: any) => {
-				callback?.(res);
-			}); //recurse
-		} else if (filename.endsWith(filter)) {
-			callback?.(filename);
-		}
 	}
 };
