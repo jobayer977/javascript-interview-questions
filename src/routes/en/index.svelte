@@ -28,7 +28,7 @@
 	.section {
 		@apply py-2;
 		h4 {
-			font-family: Barlow, sans-serif;
+			font-family: 'Barlow', 'Anek Bangla', sans-serif;
 			font-weight: 600;
 			font-size: 1.5rem;
 			line-height: 42px;

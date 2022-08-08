@@ -43,7 +43,7 @@
 			}
 		}
 		h5 {
-			font-family: Barlow, sans-serif;
+			font-family: 'Barlow', 'Anek Bangla', sans-serif;
 			font-weight: 500;
 			font-size: 1rem;
 			line-height: 26px;
@@ -52,7 +52,7 @@
 			padding-right: 20px;
 		}
 		p {
-			font-family: Barlow, sans-serif;
+			font-family: 'Barlow', 'Anek Bangla', sans-serif;
 			font-weight: 300;
 			font-size: 16px;
 			line-height: 24px;

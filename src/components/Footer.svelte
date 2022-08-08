@@ -11,7 +11,7 @@
 
 <style>
 	.copy-write {
-		font-family: Barlow, sans-serif;
+		font-family: 'Barlow', 'Anek Bangla', sans-serif;
 		font-size: 16px;
 		line-height: 24px;
 		color: rgb(246, 246, 251);

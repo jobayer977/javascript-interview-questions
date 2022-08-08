@@ -34,13 +34,13 @@
 		@apply lg:flex items-center;
 		h1 {
 			margin: 0px;
-			font-family: Barlow, sans-serif;
+			font-family: 'Barlow', 'Anek Bangla', sans-serif;
 			font-weight: 700;
 			margin: 0;
 			@apply lg:text-[2rem] text-[1.5rem];
 		}
 		p {
-			font-family: Barlow, sans-serif;
+			font-family: 'Barlow', 'Anek Bangla', sans-serif;
 			font-weight: 400;
 			font-size: 14px;
 		}
