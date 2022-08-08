@@ -28,3 +28,9 @@ export const isUserFullyScrolled = () => {
 		return scrollTop + clientHeight >= scrollHeight;
 	}
 };
+// parse string to human readable text (e.g. 'hello-world' to 'Hello World')
+export const parseString = (str: string) => {
+	// remove string special characters
+	str = str.replace(/[^\w\s]/gi, ' ');
+	return str;
+};

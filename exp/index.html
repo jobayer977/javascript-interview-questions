@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" style="background-color: black">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
+<html>
 	<body>
-		<script src="./index.js"></script>
+		<h1 id="time">Time:</h1>
 	</body>
+	<script>
+		const time = document.getElementById('time');
+		const worker = new Worker('worker.js');
+		worker.onmessage = (e) => {
+			time.innerHTML = e.data;
+		};
+	</script>
 </html>

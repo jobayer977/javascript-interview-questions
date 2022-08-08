@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { parseString } from '../../utils';
 	import Card from '../../components/Card.svelte';
 	import InnerHeader from '../../components/InnerHeader.svelte';
 	import SeoHead from '../../components/SeoHead.svelte';
@@ -12,7 +13,7 @@
 	{#if payload && Object.entries(payload)?.length}
 		{#each Object.entries(payload) || [] as content, index}
 			<div class="section">
-				<h4>{content[0]}</h4>
+				<h4>{parseString(content[0])}</h4>
 				<div class="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
 					{#each content[1] as card, index}
 						<Card {card} {index} />
