@@ -7,15 +7,16 @@
 	export let title = '';
 	export let questions = '';
 	let nextArticleUrl = '';
+	const paths = $page.url.pathname.slice(1).split('/');
 	onMount(async () => {
 		try {
 			const response = await fetch(
-				`${$page?.url?.origin}/apis/next-article/${$page?.url?.pathname.split('/')[2]}`
+				`${$page.url.origin}/apis/next-article/${paths[0]}/${paths[2]}`
 			).then((res) => res.json());
-			if (!response.fileName) {
+			if (!response.name) {
 				nextArticleUrl = null;
 			} else {
-				nextArticleUrl = `/${response.folderName}/${response.fileName}`;
+				nextArticleUrl = `/${response?.language}/${response.section}/${response.name}`;
 			}
 		} catch (error) {}
 	});

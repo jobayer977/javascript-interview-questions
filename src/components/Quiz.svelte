@@ -5,7 +5,7 @@
 	import { getAlphabets } from '../utils/index';
 	import { onDestroy, onMount } from 'svelte';
 	import { browser } from '$app/env';
-	const fileName: any = $page.url.pathname.split('/')[2];
+	const name: any = $page.url.pathname.slice(1).split('/')[2];
 	export let questions: IQuestion[] = [];
 	let selectedAnswer: string = '';
 	$: currentQuestionIndex = 0;
@@ -18,9 +18,9 @@
 		}
 		if (currentQuestionIndex === questions.length && currentQuestion?.isCorrect) {
 			topicsTrack.update((pv: any) => {
-				if (!pv) return [fileName];
-				if (pv.includes(fileName)) return pv;
-				return [...pv, fileName];
+				if (!pv) return [name];
+				if (pv.includes(name)) return pv;
+				return [...pv, name];
 			});
 		}
 		selectedAnswer = '';
@@ -33,15 +33,14 @@
 		});
 		isDone = false;
 		topicsTrack.update((pv: any) => {
-			return pv?.filter((t: any) => t !== fileName);
+			return pv?.filter((t: any) => t !== name);
 		});
 	};
 	let isDone: boolean = false;
 	let topicSubscription: any;
 	onMount(() => {
 		topicsTrack.get().subscribe((data) => {
-			console.log(data);
-			if (data?.includes(fileName)) {
+			if (data?.includes(name)) {
 				isDone = true;
 			}
 		});

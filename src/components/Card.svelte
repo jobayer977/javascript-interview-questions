@@ -2,14 +2,13 @@
 	import { browser } from '$app/env';
 	import { topicsTrack } from '../store/topics.store';
 	import { onDestroy, onMount } from 'svelte';
-	export let content: any = {};
 	export let card: any = {};
 	export let index = 0;
 	let isDone = false;
 	let topicSubscription: any;
 	onMount(() => {
 		topicsTrack.get().subscribe((data) => {
-			if (data.includes(card?.fileName)) {
+			if (Array.isArray(data) && data.includes(card?.name)) {
 				isDone = true;
 			}
 		});
@@ -20,11 +19,11 @@
 	});
 </script>
 
-<a href={`/${content?.folderName}/${card?.fileName}`} class="card " class:done={isDone}>
+<a href={`/${card?.language}/${card?.section}/${card?.name}`} class="card " class:done={isDone}>
 	<div class="status">
 		<img src="./check.svg" alt="" />
 	</div>
-	<h5>{index + 1 + '  '}. {card?.title}</h5>
+	<h5>{index + 1 + '  '}. {card?.meta?.title}</h5>
 </a>
 
 <style lang="postcss">

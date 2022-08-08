@@ -26,7 +26,9 @@ import path from 'path';
 				contents[currentFolderName] = [...(contents[currentFolderName] || []), payload];
 			}
 		}
+		console.log('contents', contents);
 	}
+
 	fromDir('./src/', '.md');
 	const markdown = Object.entries(contents)
 		.map((x) => {
