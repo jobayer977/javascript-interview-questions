@@ -14,7 +14,7 @@
 		{#each Object.entries(payload) || [] as content, index}
 			<div class="section">
 				<h4>{parseString(content[0])}</h4>
-				<div class="grid lg:grid-cols-1 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-4">
+				<div class="grid  grid-cols-1 lg:gap-5 gap-4">
 					{#each content[1] as card, index}
 						<Card {card} {index} />
 					{/each}
@@ -30,10 +30,10 @@
 		h4 {
 			font-family: 'Barlow', 'Anek Bangla', sans-serif;
 			font-weight: 600;
-			font-size: 1.5rem;
+			font-size: 22px;
 			line-height: 42px;
 			margin-top: 10px;
-			@apply mb-3;
+			@apply mb-3 uppercase;
 			color: #fffffffa;
 		}
 	}
