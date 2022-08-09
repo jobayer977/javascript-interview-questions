@@ -1,6 +1,5 @@
-let x = 10,
-	y;
+let buffer = new ArrayBuffer(16); // create a buffer of length 16
 
-[x, y = 20] = [10];
+let view = new DataView(buffer);
 
-console.log(x, y);
+console.log(view);
