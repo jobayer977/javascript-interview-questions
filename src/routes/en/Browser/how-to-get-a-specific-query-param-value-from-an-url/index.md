@@ -1,7 +1,7 @@
 ---
-title:  কিভাবে একটি URL থেকে একটি নির্দিষ্ট ক্যোয়ারী প্যারাম মান পেতে পারি ?
+title:  How to get a specific query param value from an URL?
 ---
-## কিভাবে একটি URL থেকে একটি নির্দিষ্ট ক্যোয়ারী প্যারাম মান পেতে পারি ?
+## How to get a specific query param value from an URL?
 
 The `new URL` object provides a way to handle a URL string. It accepts an URL string and this object contains `searchParams` property which can be used to extract a query params value.
 
