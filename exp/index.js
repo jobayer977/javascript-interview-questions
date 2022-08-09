@@ -1,5 +1,16 @@
-let buffer = new ArrayBuffer(16); // create a buffer of length 16
+const methods = {
+	greet() {
+		console.log(`hello, my name is ${this.name}!`);
+	}
+};
+class user {
+	constructor(name) {
+		this.name = name;
+	}
+}
+Object.assign(user.prototype, methods);
 
-let view = new DataView(buffer);
+const person1 = new user('Jobayer Hossain');
+person1.greet();
 
-console.log(view);
+console.dir(user);
