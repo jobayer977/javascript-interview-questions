@@ -2,11 +2,5 @@
 	<body>
 		<h1 id="time">Time:</h1>
 	</body>
-	<script>
-		const time = document.getElementById('time');
-		const worker = new Worker('worker.js');
-		worker.onmessage = (e) => {
-			time.innerHTML = e.data;
-		};
-	</script>
+	<script src="./index.js"></script>
 </html>
