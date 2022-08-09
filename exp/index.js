@@ -1,10 +1,7 @@
-function myInfo(strings, name, age) {
-	console.log(strings);
-	console.log(name); // "John"
-	console.log(age); // 30
-}
+var str = `Hello world \n Jon Snow`;
+console.log(str);
+// Hello world
+//  Jon Snow
 
-const name = 'John';
-const age = 30;
-
-myInfo`Hello, I'am ${name}. I'm ${age} years old.`;
+var rawStr = String.raw`Hello world \n Jon Snow`;
+console.log(rawStr); //Hello world \n Jon Snow
