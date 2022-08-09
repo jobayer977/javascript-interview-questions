@@ -2,7 +2,7 @@
 	export const load = async ({}) => {
 		return {
 			status: 302,
-			redirect: '/bn'
+			redirect: '/en'
 		};
 	};
 </script>
