@@ -1,2 +1,14 @@
-const url = new URL('https://domain.com?page=1&take=20');
-console.log(url.searchParams.get('page'));
+const service = {
+	get: function () {
+		// Get Api Implemented
+	},
+	put: function () {
+		// put Api Implemented
+	},
+	post: function () {
+		// post Api Implmented
+	}
+};
+
+service.get();
+service.post();
