@@ -1,7 +1,6 @@
-var str = `Hello world \n Jon Snow`;
-console.log(str);
-// Hello world
-//  Jon Snow
+let x = 10,
+	y;
 
-var rawStr = String.raw`Hello world \n Jon Snow`;
-console.log(rawStr); //Hello world \n Jon Snow
+[x, y = 20] = [10];
+
+console.log(x, y);
