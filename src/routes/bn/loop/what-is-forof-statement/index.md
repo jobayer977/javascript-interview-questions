@@ -1,5 +1,5 @@
 ---
-title:  What is for...of statement
+title: for...of কি?
 ---
 ## What is for...of statement
 
