@@ -1,16 +1,32 @@
-const methods = {
-	greet() {
-		console.log(`hello, my name is ${this.name}!`);
-	}
-};
-class user {
+class Animal {
 	constructor(name) {
 		this.name = name;
 	}
+	getName() {
+		console.log(this.name);
+		return this.name;
+	}
 }
-Object.assign(user.prototype, methods);
 
-const person1 = new user('Jobayer Hossain');
-person1.greet();
+class Dog extends Animal {
+	constructor(name) {
+		super(name);
+	}
+	getName() {
+		return this.name + ' is a dog';
+	}
+}
 
-console.dir(user);
+class Cat extends Animal {
+	constructor(name) {
+		super(name);
+	}
+	getName() {
+		return this.name + ' is a cat';
+	}
+}
+
+var dog = new Dog('Fido');
+var cat = new Cat('Mimi');
+
+console.dir(cat);
