@@ -26,7 +26,7 @@ const promiseOne = new Promise((resolve, reject) => {
 
 const promiseTwo = new Promise((resolve, reject) => {
 	setTimeout(() => {
-		resolve('two');
+		reject('two');
 	}, 2000);
 });
 
@@ -36,6 +36,6 @@ const promiseThree = new Promise((resolve, reject) => {
 	}, 3000);
 });
 
-const resolved = all([promiseOne, promiseTwo, promiseThree]).then((results) => {
+const resolved = Promise.all([promiseOne, promiseTwo, promiseThree]).then((results) => {
 	console.log(results);
 });

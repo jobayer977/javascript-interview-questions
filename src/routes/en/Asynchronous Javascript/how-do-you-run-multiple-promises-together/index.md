@@ -3,7 +3,7 @@ title:  How do you run multiple promises together?
 ---
 ## How do you run multiple promises together?
 
-Handle multiple promises and complete each one before starting the next one. The `Promise.all` function takes an array of promises and resolves each one sequentially which might be an option to deal with multiple promises.
+Handle multiple promises and complete each one before starting the next one. The `Promise.all` It takes an array of promises and returns a single promise.
 
 ```javascript
 const promiseOne = new Promise((resolve, reject) => {
