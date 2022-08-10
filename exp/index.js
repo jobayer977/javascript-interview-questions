@@ -36,6 +36,6 @@ const promiseThree = new Promise((resolve, reject) => {
 	}, 3000);
 });
 
-const resolved = Promise.all([promiseOne, promiseTwo, promiseThree]).then((results) => {
+const resolved = all([promiseOne, promiseTwo, promiseThree]).then((results) => {
 	console.log(results);
 });
