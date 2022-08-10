@@ -1,32 +1,20 @@
-class Animal {
+class Person {
+	#age = 0;
+	name = '';
 	constructor(name) {
 		this.name = name;
 	}
-	getName() {
-		console.log(this.name);
-		return this.name;
+
+	getAge() {
+		return this.#age;
+	}
+
+	setAge(age) {
+		this.#age = age;
 	}
 }
 
-class Dog extends Animal {
-	constructor(name) {
-		super(name);
-	}
-	getName() {
-		return this.name + ' is a dog';
-	}
-}
-
-class Cat extends Animal {
-	constructor(name) {
-		super(name);
-	}
-	getName() {
-		return this.name + ' is a cat';
-	}
-}
-
-var dog = new Dog('Fido');
-var cat = new Cat('Mimi');
-
-console.dir(cat);
+const person = new Person('John');
+person.setAge(30);
+console.log(person.#age);
+// Uncaught SyntaxError: Private field '#age' must be declared in an enclosing class (
