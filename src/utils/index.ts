@@ -34,3 +34,17 @@ export const parseString = (str: string) => {
 	str = str.replace(/[^\w\s]/gi, ' ');
 	return str;
 };
+
+// throttle function
+export const throttle = (func: any, wait: number) => {
+	let timeout: any;
+	return function (...args: any) {
+		const context = this;
+		if (!timeout) {
+			timeout = setTimeout(() => {
+				timeout = null;
+				func.apply(context, args);
+			}, wait);
+		}
+	};
+};
