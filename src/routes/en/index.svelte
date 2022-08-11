@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { parseString } from '../../utils';
-	import Card from '../../components/Card.svelte';
-	import InnerHeader from '../../components/InnerHeader.svelte';
-	import SeoHead from '../../components/SeoHead.svelte';
-	export let payload: any[] = [];
-	export let total: number = 0;
+	import { parseString } from '../../utils'
+	import Card from '../../components/Card.svelte'
+	import Header from '../../components/Header.svelte'
+	import SeoHead from '../../components/SeoHead.svelte'
+	export let payload: any[] = []
+	export let total: number = 0
 </script>
 
 <SeoHead />
 <div class="container " style="min-height: 75vh">
-	<InnerHeader totalTopics={total} />
+	<Header totalTopics={total} />
 	{#if payload && Object.entries(payload)?.length}
 		{#each Object.entries(payload) || [] as content, index}
 			<div class="section">
@@ -33,8 +33,7 @@
 			font-size: 18px;
 			line-height: 42px;
 			margin-top: 10px;
-			@apply mb-3 uppercase;
-			color: #fffffffa;
+			@apply mb-3 uppercase text-white;
 		}
 	}
 </style>

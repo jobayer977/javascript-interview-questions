@@ -1,11 +1,13 @@
-<div class="bg-[#161627] py-10 mt-24">
+<div class="bg-darkGray py-10 mt-24">
 	<div class="container text-center">
 		<div class="flex justify-center mb-4">
 			<a href="https://github.com/jobayer977/js.jobayer.dev" target="_blank">
 				<img src="/github.svg" class="h-10" alt="" />
 			</a>
 		</div>
-		<p class="copy-write">Copyright ©{new Date().getFullYear()}, Decode Javascript</p>
+		<p class="copy-write">
+			Copyright ©{new Date().getFullYear()}, Decode Javascript
+		</p>
 	</div>
 </div>
 

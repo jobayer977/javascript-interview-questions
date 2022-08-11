@@ -1,28 +1,28 @@
-import adapter from '@sveltejs/adapter-cloudflare';
-import { mdsvex } from 'mdsvex';
-import preprocess from 'svelte-preprocess';
-import relativeImages from 'mdsvex-relative-images';
+import adapter from '@sveltejs/adapter-cloudflare'
+import { mdsvex } from 'mdsvex'
+import preprocess from 'svelte-preprocess'
+import relativeImages from 'mdsvex-relative-images'
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.md', '.svx'],
 	kit: {
 		adapter: adapter(),
 		prerender: {
-			default: true
-		}
+			default: true,
+		},
 	},
 	preprocess: [
 		preprocess({
-			postcss: true
+			postcss: true,
 		}),
 		mdsvex({
 			extensions: ['.md', '.svx'],
 			highlight: {
-				alias: { js: 'javascript' }
+				alias: { js: 'javascript' },
 			},
-			layout: './src/lib/BlogLayout.svelte',
-			remarkPlugins: [relativeImages]
-		})
-	]
-};
-export default config;
+			layout: './src/layouts/BlogLayout.svelte',
+			remarkPlugins: [relativeImages],
+		}),
+	],
+}
+export default config

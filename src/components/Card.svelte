@@ -1,25 +1,29 @@
 <script lang="ts">
-	import { browser } from '$app/env';
-	import { topicsTrack } from '../store/topics.store';
-	import { onDestroy, onMount } from 'svelte';
-	export let card: any = {};
-	export let index = 0;
-	let isDone = false;
-	let topicSubscription: any;
+	import { browser } from '$app/env'
+	import { topicsTrack } from '../store/topics.store'
+	import { onDestroy, onMount } from 'svelte'
+	export let card: any = {}
+	export let index = 0
+	let isDone = false
+	let topicSubscription: any
 	onMount(() => {
 		topicsTrack.get().subscribe((data) => {
 			if (Array.isArray(data) && data.includes(card?.name)) {
-				isDone = true;
+				isDone = true
 			}
-		});
-	});
+		})
+	})
 	onDestroy(() => {
-		if (!browser) return;
-		topicSubscription?.unsubscribe();
-	});
+		if (!browser) return
+		topicSubscription?.unsubscribe()
+	})
 </script>
 
-<a href={`/${card?.language}/${card?.section}/${card?.name}`} class="card " class:done={isDone}>
+<a
+	href={`/${card?.language}/${card?.section}/${card?.name}`}
+	class="card "
+	class:done={isDone}
+>
 	<div class="status">
 		<img src="./check.svg" alt="" />
 	</div>
@@ -28,10 +32,8 @@
 
 <style lang="postcss">
 	.card {
-		/* @apply lg:min-h-[100px]; */
-		background: #161627;
+		@apply bg-darkGray shadow-md;
 		border-radius: 0.5rem;
-		box-shadow: 0 1px 2px #0000003d, 0 1px 3px #0000001f;
 		padding: 15px;
 		border-width: 3px;
 		@apply border-solid relative border-white border-opacity-10 transition-all lg:hover:scale-105;
@@ -60,7 +62,7 @@
 			margin: 10px 0px !important;
 		}
 		&.done {
-			@apply border-green-600 bg-blue-opaque border-opacity-50;
+			@apply border-primary bg-secondary  border-opacity-50;
 			.status {
 				img {
 					@apply opacity-90 fill-red-600;

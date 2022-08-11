@@ -48,11 +48,16 @@
 	<div class="fixed right-3 bottom-5 z-10">
 		<div
 			on:click={scrollToTop}
-			class="bg-blue-800 inline-block hover:bg-gray-100 cursor-pointer text-gray-800 font-semibold py-1 px-1  rounded-lg transition-all"
+			class="bg-primary inline-block  cursor-pointer text-white font-semibold py-1 px-1  rounded-lg transition-all"
 			in:fade={{ duration: 500, delay: 100 }}
 			out:fade={{ duration: 100 }}
 		>
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="white"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
 				><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" /><path
 					d="M0 0h24v24H0z"
 					fill="none"
