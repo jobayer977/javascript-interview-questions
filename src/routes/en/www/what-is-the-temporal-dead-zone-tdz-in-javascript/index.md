@@ -3,7 +3,7 @@ title:  What is the Temporal Dead Zone (TDZ) in JavaScript?
 ---
 ## What is the Temporal Dead Zone (TDZ) in JavaScript ?
 
-A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value. A block is a pair of braces ( `{...}` ) used to group multiple statements. Initialization occurs when you assign an initial value to a variable.
+A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.
 
 ```js
     function somemethod() {
