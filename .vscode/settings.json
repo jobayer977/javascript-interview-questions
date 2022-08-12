@@ -8,5 +8,11 @@
 		"Remove",
 		"assets",
 		"API"
+	],
+	"grammarly.selectors": [
+		{
+			"language": "markdown",
+			"scheme": "file"
+		}
 	]
 }
