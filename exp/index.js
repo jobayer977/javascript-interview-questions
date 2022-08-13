@@ -1,4 +1,13 @@
-// What is Map object?
-// Ans: Map is an object that holds key-value pairs. Each key is unique in the map. The value can be any type, even another map. Map is an iterable object. It has a forEach() method, which can be used to iterate over all key-value pairs in the map. Map is a collection of key-value pairs.
+// What is WeakMap in JavaScript?
+// WeakMap is a data structure that allows you to store key-value pairs but only if the keys are objects. If the keys are primitive values, then the WeakMap will not store them. This is useful for storing objects that you don’t want to keep in memory, but you do want to reference later. For example, you might want to store a reference to a DOM element in a WeakMap so that you can easily access it later.
 
 // Example
+var myWeakMap = new WeakMap();
+var myObj = {
+	foo: 'bar'
+};
+myWeakMap.set(myObj, 'baz');
+console.log(myWeakMap.get(myObj)); // 'baz'
+console.log(myWeakMap.has(myObj)); // true
+
+// When we should use WeakMap?
