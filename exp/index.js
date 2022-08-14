@@ -1,35 +1,13 @@
-window.addEventListener('load', function () {
-	// Function de display info about the storage space
-	function dislayStorageSpace() {
-		navigator.storage.estimate().then(function (estimate) {
-			console.info('Estimated quota: ', estimate.quota);
-			console.info('Estimated usage: ', estimate.usage);
-			const percent = ((estimate.usage / estimate.quota) * 100).toFixed(2);
-			console.info('Your currently used storage: ', persent, '%');
-		});
-	}
+const bc = new BroadcastChannel('test_channel');
 
-	// Check if a storage is persistent
-	function isStoragePersistent() {
-		if (navigator.storage && navigator.storage.persisted) {
-			navigator.storage.persisted().then(function (persisted) {
-				const isPersistent = persisted ? true : false;
-				console.info('Is my storage persistent? ', isPersistent);
-			});
-		}
-	}
+bc.onmessage = function (event) {
+	console.log(event.data);
+};
 
-	dislayStorageSpace();
-	isStoragePersistent();
-
-	// Request storage persistence from the browser
-	document.getElementById('btnReqPers').addEventListener('click', function () {
-		navigator.storage.persist().then(function (result) {
-			if (result) {
-				console.log("This site's storage has been made persistent");
-			} else {
-				console.log("Unable to make this site's storage persistent");
-			}
-		});
-	});
+document.body.addEventListener('click', () => {
+	bc.postMessage('hello');
 });
+
+// How can we communicate between two different tabs ?
+// Ans: Use BroadcastChannel Web API to communicate between two different tabs.
+//      BroadcastChannel is a Web API that allows you to send and receive messages between different tabs.
