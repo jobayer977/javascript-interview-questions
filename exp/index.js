@@ -1,2 +1,11 @@
-// Can I redeclare let and const variables?
-// ANSWER : Yes, you can. You can redeclare a variable if you want to change its value. You can also redeclare a variable if you want to change its type. You can redeclare a variable if you want to change its scope.
+// What is immutability?
+// Immutability is the property of data that never changes. It is the property of data that never changes. For example, a person's name is immutable. If you change a person's name, you can't change it back.
+
+// Example:
+'use strict';
+const person = {
+	name: 'John',
+	age: 30
+};
+// Make it immutable
+Object.freeze(person);
