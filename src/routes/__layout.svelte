@@ -48,7 +48,7 @@
 	<div class="fixed right-3 bottom-5 z-10">
 		<div
 			on:click={scrollToTop}
-			class="bg-primary inline-block  cursor-pointer text-white font-semibold py-1 px-1  rounded-lg transition-all"
+			class="bg-theme inline-block  cursor-pointer text-white font-semibold py-1 px-1  rounded-lg transition-all"
 			in:fade={{ duration: 500, delay: 100 }}
 			out:fade={{ duration: 100 }}
 		>

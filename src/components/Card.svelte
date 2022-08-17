@@ -1,29 +1,25 @@
 <script lang="ts">
-	import { browser } from '$app/env'
-	import { topicsTrack } from '../store/topics.store'
-	import { onDestroy, onMount } from 'svelte'
-	export let card: any = {}
-	export let index = 0
-	let isDone = false
-	let topicSubscription: any
+	import { browser } from '$app/env';
+	import { topicsTrack } from '../store/topics.store';
+	import { onDestroy, onMount } from 'svelte';
+	export let card: any = {};
+	export let index = 0;
+	let isDone = false;
+	let topicSubscription: any;
 	onMount(() => {
 		topicsTrack.get().subscribe((data) => {
 			if (Array.isArray(data) && data.includes(card?.name)) {
-				isDone = true
+				isDone = true;
 			}
-		})
-	})
+		});
+	});
 	onDestroy(() => {
-		if (!browser) return
-		topicSubscription?.unsubscribe()
-	})
+		if (!browser) return;
+		topicSubscription?.unsubscribe();
+	});
 </script>
 
-<a
-	href={`/${card?.language}/${card?.section}/${card?.name}`}
-	class="card "
-	class:done={isDone}
->
+<a href={`/${card?.language}/${card?.section}/${card?.name}`} class="card " class:done={isDone}>
 	<div class="status">
 		<img src="./check.svg" alt="" />
 	</div>
@@ -62,7 +58,7 @@
 			margin: 10px 0px !important;
 		}
 		&.done {
-			@apply border-primary bg-secondary  border-opacity-50;
+			@apply border-theme bg-secondary  border-opacity-50;
 			.status {
 				img {
 					@apply opacity-90 fill-red-600;

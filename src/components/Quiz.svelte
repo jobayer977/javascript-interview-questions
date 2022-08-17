@@ -1,58 +1,54 @@
 <script lang="ts">
-	import { page } from '$app/stores'
-	import { topicsTrack } from '../store/topics.store'
-	import type { IQuestion } from '../models/interfaces'
-	import { getAlphabets } from '../utils/index'
-	import { onDestroy, onMount } from 'svelte'
-	import { browser } from '$app/env'
-	const name: any = $page.url.pathname.slice(1).split('/')[2]
-	export let questions: IQuestion[] = []
-	let selectedAnswer: string = ''
-	$: currentQuestionIndex = 0
-	$: currentQuestion = questions[currentQuestionIndex]
+	import { page } from '$app/stores';
+	import { topicsTrack } from '../store/topics.store';
+	import type { IQuestion } from '../models/interfaces';
+	import { getAlphabets } from '../utils/index';
+	import { onDestroy, onMount } from 'svelte';
+	import { browser } from '$app/env';
+	const name: any = $page.url.pathname.slice(1).split('/')[2];
+	export let questions: IQuestion[] = [];
+	let selectedAnswer: string = '';
+	$: currentQuestionIndex = 0;
+	$: currentQuestion = questions[currentQuestionIndex];
 	const onSubmit = () => {
 		if (currentQuestionIndex <= questions.length - 1) {
-			currentQuestion.isCorrect =
-				currentQuestion.correctAnswer === selectedAnswer
-			questions[currentQuestionIndex] = currentQuestion
-			currentQuestionIndex = currentQuestionIndex + 1
+			currentQuestion.isCorrect = currentQuestion.correctAnswer === selectedAnswer;
+			questions[currentQuestionIndex] = currentQuestion;
+			currentQuestionIndex = currentQuestionIndex + 1;
 		}
-		if (
-			currentQuestionIndex === questions.length &&
-			currentQuestion?.isCorrect
-		) {
+		if (currentQuestionIndex === questions.length && currentQuestion?.isCorrect) {
 			topicsTrack.update((pv: any) => {
-				if (!pv) return [name]
-				if (pv.includes(name)) return pv
-				return [...pv, name]
-			})
+				if (!pv) return [name];
+				if (pv.includes(name)) return pv;
+				return [...pv, name];
+			});
 		}
-		selectedAnswer = ''
-	}
+		selectedAnswer = '';
+	};
 	const onReset = () => {
-		currentQuestionIndex = 0
+		currentQuestionIndex = 0;
 		questions = questions.map((question) => {
-			question.isCorrect = false
-			return question
-		})
-		isDone = false
+			question.isCorrect = false;
+			return question;
+		});
+		isDone = false;
 		topicsTrack.update((pv: any) => {
-			return pv?.filter((t: any) => t !== name)
-		})
-	}
-	let isDone: boolean = false
-	let topicSubscription: any
+			return pv?.filter((t: any) => t !== name);
+		});
+	};
+	let isDone: boolean = false;
+	let topicSubscription: any;
 	onMount(() => {
 		topicsTrack.get().subscribe((data) => {
 			if (data?.includes(name)) {
-				isDone = true
+				isDone = true;
 			}
-		})
-	})
+		});
+	});
 	onDestroy(() => {
-		if (!browser) return
-		topicSubscription?.unsubscribe()
-	})
+		if (!browser) return;
+		topicSubscription?.unsubscribe();
+	});
 </script>
 
 {#if questions.length}
@@ -68,7 +64,7 @@
 						class="option"
 						class:selected={answer === selectedAnswer}
 						on:click={() => {
-							selectedAnswer = answer
+							selectedAnswer = answer;
 						}}
 					>
 						<span>{getAlphabets(index)}</span>
@@ -118,7 +114,7 @@
 				@apply text-white font-medium;
 			}
 			span {
-				@apply bg-primary py-1 px-2 inline-block text-center rounded-sm mr-3 font-semibold text-sm;
+				@apply bg-theme py-1 px-2 inline-block text-center rounded-sm mr-3 font-semibold text-sm;
 			}
 			.icon {
 				top: 50%;
@@ -126,19 +122,19 @@
 				@apply absolute right-2 h-8;
 			}
 			&.selected {
-				@apply border-primary bg-primary;
+				@apply border-theme bg-theme;
 				span {
-					@apply bg-primary text-white;
+					@apply bg-theme text-white;
 				}
 			}
 		}
 		.actions {
 			@apply flex justify-end mt-5;
 			.btn {
-				@apply bg-primary text-white font-medium px-5 py-2 rounded-md mr-3;
+				@apply bg-theme text-white font-medium px-5 py-2 rounded-md mr-3;
 				&.reset {
 					@apply bg-darkGray;
-					@apply border-primary border-2;
+					@apply border-theme border-2;
 				}
 			}
 		}

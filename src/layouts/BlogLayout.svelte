@@ -1,25 +1,25 @@
 <script>
-	import SeoHead from '../components/SeoHead.svelte'
-	import Header from '../components/Header.svelte'
-	import Quiz from '../components/Quiz.svelte'
-	import { page } from '$app/stores'
-	import { onMount } from 'svelte'
-	export let title = ''
-	export let questions = ''
-	let nextArticleUrl = ''
-	const paths = $page.url.pathname.slice(1).split('/')
+	import SeoHead from '../components/SeoHead.svelte';
+	import Header from '../components/Header.svelte';
+	import Quiz from '../components/Quiz.svelte';
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+	export let title = '';
+	export let questions = '';
+	let nextArticleUrl = '';
+	const paths = $page.url.pathname.slice(1).split('/');
 	onMount(async () => {
 		try {
 			const response = await fetch(
 				`${$page.url.origin}/apis/next-article/${paths[0]}/${paths[2]}`
-			).then((res) => res.json())
+			).then((res) => res.json());
 			if (!response?.name) {
-				nextArticleUrl = null
+				nextArticleUrl = null;
 			} else {
-				nextArticleUrl = `/${response?.language}/${response?.section}/${response?.name}`
+				nextArticleUrl = `/${response?.language}/${response?.section}/${response?.name}`;
 			}
 		} catch (error) {}
-	})
+	});
 </script>
 
 <SeoHead {title} />
@@ -66,7 +66,7 @@
 		@apply flex justify-center my-16;
 	}
 	.actions .btn {
-		@apply bg-primary text-white font-medium px-16 py-4 rounded-md mr-3;
+		@apply bg-theme text-white font-medium px-16 py-4 rounded-md mr-3;
 	}
 
 	::-webkit-scrollbar {

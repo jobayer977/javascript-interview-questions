@@ -8,7 +8,7 @@ body {
 	width: 100% !important;
 	min-height: 100% !important;
 	min-height: calc(100vh - 200px);
-	@apply bg-secondary text-light;
+	@apply bg-secondary text-typographyPrimary;
 }
 html {
 	height: 100%;
