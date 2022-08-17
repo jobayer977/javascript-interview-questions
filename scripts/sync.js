@@ -33,7 +33,6 @@ import path from 'path';
 		const payload = {
 			title: result.title,
 			content: content,
-			problem: result.Problem,
 			section
 		};
 		topics[section] = [...(topics[section] || []), payload];

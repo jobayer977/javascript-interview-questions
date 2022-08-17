@@ -1,28 +1,26 @@
 <script lang="ts">
-	import { parseString } from '../../utils'
-	import Card from '../../components/Card.svelte'
-	import Header from '../../components/Header.svelte'
-	import SeoHead from '../../components/SeoHead.svelte'
-	export let payload: any[] = []
-	export let total: number = 0
+	import { parseString } from '../../utils';
+	import Card from '../../components/Card.svelte';
+	import Header from '../../components/Header.svelte';
+	import SeoHead from '../../components/SeoHead.svelte';
+	export let payload: any[] = [];
+	export let total: number = 0;
 </script>
 
 <SeoHead />
-<div class="container " style="min-height: 75vh">
-	<Header totalTopics={total} />
-	{#if payload && Object.entries(payload)?.length}
-		{#each Object.entries(payload) || [] as content, index}
-			<div class="section">
-				<h4>{parseString(content[0])}</h4>
-				<div class="grid  grid-cols-1 lg:gap-5 gap-4">
-					{#each content[1] as card, index}
-						<Card {card} {index} />
-					{/each}
-				</div>
+<Header totalTopics={total} />
+{#if payload && Object.entries(payload)?.length}
+	{#each Object.entries(payload) || [] as content, index}
+		<div class="section">
+			<h4>{parseString(content[0])}</h4>
+			<div class="grid  grid-cols-1 lg:gap-5 gap-4">
+				{#each content[1] as card, index}
+					<Card {card} {index} />
+				{/each}
 			</div>
-		{/each}
-	{/if}
-</div>
+		</div>
+	{/each}
+{/if}
 
 <style lang="postcss">
 	.section {

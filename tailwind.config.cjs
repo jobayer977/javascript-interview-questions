@@ -21,7 +21,7 @@ module.exports = {
 				primaryText: '#fffffffa;'
 			},
 			boxShadow: {
-				md: '0 1px 2px #0000003d, 0 1px 3px #0000001f'
+				md: '0 2px 25px 0 rgb(0 0 0 / 10%)'
 			},
 			fontFamily: {
 				sans: ['IBM Plex Sans', ...fontFamily.sans]
