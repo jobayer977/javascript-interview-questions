@@ -20,7 +20,7 @@ foo(); // 1
 
 **Block Scope :**
 
-variables defined inside a block are accessible outside the block.
+This scope restricts the variable that is declared inside a specific block, from access by the outside of the block. The let & const keyword facilitates the variables to be block scoped.
 
 ```javascript
 if (true) {
