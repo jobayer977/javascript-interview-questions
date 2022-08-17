@@ -9,16 +9,11 @@ module.exports = {
 				padding: '1rem'
 			},
 			colors: {
-				theme: '#0070f3',
-				backgroundPrimary: '#fafafa',
+				theme: '#00c2cb',
+				backgroundPrimary: '#ffff',
 				backgroundSecondary: '#f5f5f5',
-				typographyPrimary: '#333',
-				typographySecondary: '#666',
-
-				primary: '#00c2cb',
-				secondary: '#ffff',
-				darkGray: '#ffff',
-				primaryText: '#fffffffa;'
+				typographyPrimary: '#001e00',
+				typographySecondary: '#6c757d'
 			},
 			boxShadow: {
 				md: '0 2px 25px 0 rgb(0 0 0 / 10%)'

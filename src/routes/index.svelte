@@ -21,67 +21,31 @@
 <script>
 	export let topics = [];
 	import InnerHeader from '../components/InnerHeader.svelte';
+	import Topic from '../components/Topic.svelte';
+	let searchTerm = '';
+	$: sortedTopics = topics?.filter((post) =>
+		post.title.toLowerCase().includes(searchTerm.toLowerCase())
+	);
 </script>
 
 <div class="container">
-	<InnerHeader />
+	<InnerHeader
+		totalTopics={topics.length}
+		on:search={(e) => {
+			searchTerm = e.detail;
+		}}
+	/>
 </div>
 <div class="container">
 	<div class="content">
-		{#if topics.length > 0}
-			{#each topics as item, index}
-				<a href={`/sss`} class="card " class:done={false}>
-					<div class="status">
-						<img src="./check.svg" alt="" />
-					</div>
-					<h5>{index + 1 + '  '}. {item?.title}</h5>
-				</a>
+		{#if sortedTopics.length > 0}
+			{#each sortedTopics as item, index}
+				<Topic {index} {item} />
 			{/each}
+		{:else}
+			<div class="p-8 text-center">
+				<h3>No Topics Found</h3>
+			</div>
 		{/if}
 	</div>
 </div>
-
-<style lang="postcss">
-	.card {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 10px 15px;
-		border-radius: 48px;
-		cursor: pointer;
-		.status {
-			@apply absolute right-3 top-3 h-5;
-			img {
-				@apply h-full w-full;
-				filter: grayscale(100%);
-			}
-		}
-		h5 {
-			align-items: center;
-			font-weight: 600;
-			font-size: 16px;
-			color: #001e00;
-			line-height: 22px;
-		}
-		p {
-			font-family: 'Barlow', 'Anek Bangla', sans-serif;
-			font-weight: 300;
-			font-size: 16px;
-			line-height: 24px;
-			color: #001e00;
-			margin: 10px 0px !important;
-		}
-		&.done {
-			@apply border-theme bg-secondary  border-opacity-50;
-			.status {
-				img {
-					@apply opacity-90 fill-red-600;
-					filter: grayscale(0%);
-				}
-				svg {
-					@apply hidden;
-				}
-			}
-		}
-	}
-</style>

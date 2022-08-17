@@ -14,8 +14,9 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import '../app.css';
+	import 'highlight.js/styles/github-dark-dimmed.css';
 	import Footer from '../components/Footer.svelte';
-	import '../styles/markdown-dark.css';
+	import '../styles/markdown.css';
 	export let currentRoute;
 	let showScrollTop = false;
 	onMount(() => {

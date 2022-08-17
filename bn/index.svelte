@@ -8,21 +8,19 @@
 </script>
 
 <SeoHead />
-<div class="container " style="min-height: 75vh">
-	<Header totalTopics={total} />
-	{#if payload && Object.entries(payload)?.length}
-		{#each Object.entries(payload) || [] as content, index}
-			<div class="section">
-				<h4>{parseString(content[0])}</h4>
-				<div class="grid  grid-cols-1 lg:gap-5 gap-4">
-					{#each content[1] as card, index}
-						<Card {card} {index} />
-					{/each}
-				</div>
+<Header totalTopics={total} />
+{#if payload}
+	{#each Object.entries(payload) || [] as content, index}
+		<div class="section">
+			<h4>{parseString(content[0])}</h4>
+			<div class="grid  grid-cols-1 lg:gap-5 gap-4">
+				{#each content[1] as card, index}
+					<Card {card} {index} />
+				{/each}
 			</div>
-		{/each}
-	{/if}
-</div>
+		</div>
+	{/each}
+{/if}
 
 <style lang="postcss">
 	.section {
@@ -30,10 +28,11 @@
 		h4 {
 			font-family: 'Poppins', 'Anek Bangla', sans-serif;
 			font-weight: 600;
-			font-size: 18px;
+			font-size: 22px;
 			line-height: 42px;
 			margin-top: 10px;
-			@apply mb-3 uppercase text-white;
+			@apply mb-3 uppercase;
+			@apply text-white;
 		}
 	}
 </style>

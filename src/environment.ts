@@ -1,3 +1,3 @@
 export const environment = {
-	title: 'Angular Interview Questions',
-}
+	title: 'Javascript Interview Questions'
+};
