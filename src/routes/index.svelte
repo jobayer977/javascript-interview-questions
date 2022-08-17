@@ -21,7 +21,6 @@
 <script>
 	export let topics = [];
 	import InnerHeader from '../components/InnerHeader.svelte';
-	console.log('topics', topics);
 </script>
 
 <div class="container">
