@@ -60,9 +60,9 @@
 				{@html markdonw.render(item?.content)}
 			</div>
 			<div class="edit-on-github flex justify-end w-full">
-				{#if item?.source}
-					<a href={item?.source} target="_blank" class="flex items-center text-gray-400 text-sm">
-						<i>Source</i>
+				{#if !item?.source}
+					<a href={item?.source} target="_blank" class="flex items-center text-gray-500 text-sm">
+						<u>Source</u>
 					</a>
 				{/if}
 			</div>
