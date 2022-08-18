@@ -17,7 +17,8 @@
 				} catch (__) {}
 			}
 			return '';
-		}
+		},
+		html: true
 	});
 	let topicSubscription: any;
 	let isDone = false;
