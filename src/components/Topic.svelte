@@ -59,15 +59,13 @@
 			<div class="markdown-body px-5 pt-2 pb-10 lg:pl-10">
 				{@html markdonw.render(item?.content)}
 			</div>
-			<!-- <div class="edit-on-github flex justify-end w-full">
-				<a
-					href={`https://github.com/jobayer977/js.jobayer.dev/blob/main/src/routes//index.md`}
-					target="_blank"
-					class="flex items-center text-gray-400 text-sm"
-				>
-					<i>Edit on GitHub</i>
-				</a>
-			</div> -->
+			<div class="edit-on-github flex justify-end w-full">
+				{#if item?.source}
+					<a href={item?.source} target="_blank" class="flex items-center text-gray-400 text-sm">
+						<i>Source</i>
+					</a>
+				{/if}
+			</div>
 		</article>
 	</div>
 {/if}

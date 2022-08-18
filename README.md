@@ -194,7 +194,8 @@
 
  # 00 Guide
  
- ## Can I redeclare let and const variables?
+ 
+## Can I redeclare let and const variables?
 
 No, you cannot redeclare let and const variables. If you do, it throws below error
 

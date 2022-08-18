@@ -3,7 +3,6 @@ import { existsSync, lstatSync, readFileSync, readdirSync } from 'fs';
 import fs from 'fs';
 import metadataParser from 'markdown-yaml-metadata-parser';
 import path from 'path';
-
 (async function () {
 	const fromDir = (startPath, filter, callback) => {
 		if (!existsSync(startPath)) {
@@ -33,7 +32,8 @@ import path from 'path';
 		const payload = {
 			title: result.title,
 			content: content,
-			section
+			section,
+			source: result?.source
 		};
 		topics[section] = [...(topics[section] || []), payload];
 	});
