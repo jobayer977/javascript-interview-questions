@@ -178,6 +178,8 @@
 - [176 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
 - [177 What would following code return?](#what-would-following-code-return)
 - [178 What will the following code output and why?](#what-will-the-following-code-output-and-why)
+- [179 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [180 What is the output of below code ?](#what-is-the-output-of-below-code)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3405,6 +3407,52 @@ function inner() {
 	b = 3; // b is 3
 	console.log(b); // output "3"
 }
+```
+
+</details>
+
+179. ### What is the output of below code ?
+
+```js
+var car = new Vehicle('Honda', 'white', '2010', 'UK');
+console.log(car);
+function Vehicle(model, color, year, country) {
+	this.model = model;
+	this.color = color;
+	this.year = year;
+	this.country = country;
+}
+```
+
+<details>
+    <summary>Answer</summary>
+
+The function declarations are hoisted similar to any variables. So the placement for Vehicle function declaration doesn't make any difference.
+
+</details>
+
+180. ### What is the output of below code ?
+
+```js
+function foo() {
+	let x = (y = 0);
+	x++;
+	y++;
+	return x;
+}
+
+console.log(foo(), typeof x, typeof y);
+```
+
+<details>
+    <summary>Answer</summary>
+
+Of course the return value of foo() is 1 due to the increment operator. But the statement let x = y = 0 declares a local variable x. Whereas y declared as a global variable accidentally. This statement is equivalent to,
+
+```js
+let x;
+window.y = 0;
+x = window.y;
 ```
 
 </details>
