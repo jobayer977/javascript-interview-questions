@@ -5,6 +5,7 @@ import metadataParser from 'markdown-yaml-metadata-parser';
 import path from 'path';
 
 (async function () {
+	const title = 'Frequently Asked JavaScript Interview Questions';
 	const resources = [
 		{
 			title: 'Interview-questions - by Toptal',
@@ -68,7 +69,7 @@ import path from 'path';
 	// Write the file
 	fs.writeFileSync(
 		'./README.md',
-		`### Resources \n${resourcesStringForMarkdown} \n\n ## Table of Contents\n\n${tableOfContentsStringForMarkdown}<br/><br/><br/><br/>\n\n${topicsStringForMarkdown}`
+		`# ${title} \n ### Resources \n${resourcesStringForMarkdown} \n\n ## Table of Contents\n\n${tableOfContentsStringForMarkdown}<br/><br/><br/><br/>\n\n${topicsStringForMarkdown}`
 	);
 	fs.writeFileSync('./json/topics.json', JSON.stringify(topics));
 })();
