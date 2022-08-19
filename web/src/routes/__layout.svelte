@@ -17,7 +17,7 @@
 	import 'highlight.js/styles/github-dark-dimmed.css';
 	import Footer from '../components/Footer.svelte';
 	import '../styles/markdown.css';
-	import SeoHead from 'src/components/SeoHead.svelte';
+	import SeoHead from '../components/SeoHead.svelte';
 	export let currentRoute;
 	let showScrollTop = false;
 	onMount(() => {
