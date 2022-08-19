@@ -196,8 +196,6 @@
  
  ### 1.1 Can I redeclare let and const variables? 
  
-## Can I redeclare let and const variables?
-
 No, you cannot redeclare let and const variables. If you do, it throws below error
 
 ```properties
@@ -208,8 +206,6 @@ Uncaught SyntaxError: Identifier 'someVariable' has already been declared
    
  ### 1.2 Difference between Function Scope vs Block Scope in JavaScript? 
  
-## Difference between Function Scope vs Block Scope in JavaScript?
-
 **Function Scope**:
 variables defined inside a function are not accessible outside the function.
 
@@ -240,8 +236,7 @@ console.log(a); // ReferenceError: a is not defined
 
    
  ### 1.3 Difference between Local and Global Variable ? 
- ## Difference between Local and Global Variable ?
-
+ 
 **KEY DIFFERENCE**
 
 - Local variable is declared inside a function or block scope whereas Global variable is declared outside the function.
@@ -252,8 +247,7 @@ console.log(a); // ReferenceError: a is not defined
 
    
  ### 1.4 Difference between var and let in JavaScript? 
- ## Difference between var and let in JavaScript?  
-
+ 
 The main difference between let and var is that scope of a variable defined with let is limited to the block in which it is declared while variable declared with var has the global scope. So we can say that var is rather a keyword which defines a variable globally regardless of block scope.
 
 Also, one difference between var and let is variable with var can be redeclared to some other value while variable could not be redeclared if it is defined with let.
@@ -261,11 +255,10 @@ Also, one difference between var and let is variable with var can be redeclared 
 
    
  ### 1.5 How garbage collection works in JavaScript ? 
- ## How garbage collection works in JavaScript ?
-
+ 
 In JavaScript, the memory management process is automated. The browser takes care of that thing for us. When a variable function or object is created in javascript the memory space is created for the reading and write operations. after the operations are done and no longer references are connected to the variable then the garbage collector release the variables from memory spaces. The Garbage Collection mechanism in JavaScript is governed by two algorithms
 
- **Reference Counting Algorithm**
+**Reference Counting Algorithm**
 It determines the usefulness of an object by finding out if the object is being referenced by some other object or not.
 
 **Mark and Sweep Algorithm.**
@@ -274,8 +267,7 @@ If an object is having zero references then it is effectively unreachable. So it
 
    
  ### 1.6 List down some of the features of ES6 ? 
- ## List down some of the features of ES6 ?
-
+ 
 Below are the list of some new features of ES6,
 
 - Support for constants or immutable variables
@@ -294,34 +286,32 @@ Below are the list of some new features of ES6,
 
    
  ### 1.7 What are global variables ? 
- ## What are global variables ?
-
+ 
 Global variables are those that are available throughout the length of the code without any scope. The var keyword is used to declare a local variable but if you omit it then it will become global variable
 
-
 ```javascript
-msg = "Hello"; // var is missing, it becomes global variable
-``` 
+msg = 'Hello'; // var is missing, it becomes global variable
+```
+ 
 
    
  ### 1.8 What are  namespaces? 
- ## What are  namespaces?
-
+ 
 The namespace is a programming paradigm it's used to avoid variable naming collisions. Help to organize code into logical groups. JavaScript does not provide namespace by default. However, we can replicate this functionality by making a global object which can contain all functions and variables.
 
 **Example**
 
 ```javascript
 const service = {
- get: function () {
-  // Get Api Implemented
- },
- put: function () {
-  // put Api Implemented
- },
- post: function () {
-  // post Api Implmented
- }
+	get: function () {
+		// Get Api Implemented
+	},
+	put: function () {
+		// put Api Implemented
+	},
+	post: function () {
+		// post Api Implmented
+	}
 };
 
 service.get();
@@ -331,16 +321,14 @@ service.post();
 
    
  ### 1.9 What are PWAs used for? 
- ## What are PWAs used for?
-
+ 
 Progressive Web Apps (PWAs) are web apps that use service workers, manifests, and other web-platform features in combination with progressive enhancement to give users an experience on par with native apps.
  
 
    
  ### 1.10 What are raw strings? 
- ## What are raw strings?
-
- It's used to get the raw string form of template literals without processing to escape sequences (e.g. \n).
+ 
+It's used to get the raw string form of template literals without processing to escape sequences (e.g. \n).
 
 ```javascript
 var str = `Hello world \n Jon Snow`;
@@ -350,24 +338,22 @@ console.log(str);
 
 var rawStr = String.raw`Hello world \n Jon Snow`;
 console.log(rawStr); //Hello world \n Jon Snow
-
 ```
  
 
    
  ### 1.11 What are some unique features of JavaScript ? 
- ## What are some unique features of JavaScript ?
-
+ 
 There are at least three great things about JavaScript:
 
 1. Full integration with HTML/CSS.
 2. Simple and easy to understand syntax.
-3. Supported by all modern browsers and enabled by default in all modern browsers. 
+3. Supported by all modern browsers and enabled by default in all modern browsers.
+ 
 
    
  ### 1.12 What are the benefit of event delegation? 
- ## What are the benefit of event delegation?
-
+ 
 Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
 
 - No need to add many handlers.
@@ -376,21 +362,19 @@ Event Delegation is basically a pattern to handle events efficiently. Instead of
 
    
  ### 1.13 What does dynamic mean in JavaScript? 
- ## What does dynamic mean in JavaScript?
-
+ 
 JavaScript is a loosely typed or dynamic language because variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned/reassigned with values of all types.
 
 ```javascript
-    let age = 50; // age is a number now
-    age = "old"; // age is a string now
-    age = true; // age is a boolean
+let age = 50; // age is a number now
+age = 'old'; // age is a string now
+age = true; // age is a boolean
 ```
  
 
    
  ### 1.14 What does it mean that JavaScript is "dynamic"? 
- ## What does it mean that JavaScript is "dynamic"?
-
+ 
 JavaScript is called a dynamic language because it doesn't just have a few dynamic aspects, pretty much everything is dynamic.
 
 All variables are dynamic (both in type and existance), and even the code is dynamic. You can create new variables at runtime, and the type of variables is determined at runtime
@@ -398,21 +382,19 @@ All variables are dynamic (both in type and existance), and even the code is dyn
 
    
  ### 1.15 What is ES6 ? 
- ## What is ES6 ?
-
+ 
 ES6 stands for ECMAScript 6. ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was published in 2015, and is also known as ECMAScript 2015.
  
 
    
  ### 1.16 what is function declaration and function expression ? 
- ## what is function declaration and function expression ?
-
+ 
 **Function Declaration**
 A function created with a function declaration is a Function object and has all the properties, methods and behavior of Function
 
 ```javascript
 function add(a, b) {
- return a + b;
+	return a + b;
 }
 ```
 
@@ -421,39 +403,38 @@ A Functions stored in variables do not need function names. They are always invo
 
 ```javascript
 const add = function (a, b) {
- return a + b;
+	return a + b;
 };
 ```
  
 
    
  ### 1.17 What is Hoisting ? 
- ## What is Hoisting ?
+ 
+In JavaScript, Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution. Basically, it gives us an advantage that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.
 
-In JavaScript, Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution. Basically, it gives us an advantage that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local. 
-
-It allows us to call functions before even writing them in our code. 
+It allows us to call functions before even writing them in our code.
 
 Note: JavaScript only hoists declarations, not the initializations.
 
-JavaScript allocates memory for all variables and functions defined in the program before execution. [Reference](https://www.geeksforgeeks.org/javascript-hoisting/) 
+JavaScript allocates memory for all variables and functions defined in the program before execution. [Reference](https://www.geeksforgeeks.org/javascript-hoisting/)
+ 
 
    
  ### 1.18 What is JavaScript? 
- ## What is JavaScript?
-Javascript is a synchronized single-threaded programming language.  
+ 
+Javascript is a synchronized single-threaded programming language.
+ 
 
    
  ### 1.19 What is polyfill used for? 
- ## What is polyfill used for?
-
+ 
 Polyfills allow web developers to use an API regardless of whether or not it is supported by a browser, and usually with minimal overhead. Typically they first check if a browser supports an API, and use it if available, otherwise using their own implementation.
  
 
    
  ### 1.20 What is scope of variable in JavaScript ? 
- ## What is scope of variable in JavaScript ?
-
+ 
 The scope of a variable is the region of your program in which it is defined. JavaScript variables have only two scopes.
 
 - **Global Variables** − A global variable has global scope which means it can be defined anywhere in your JavaScript code
@@ -462,14 +443,13 @@ The scope of a variable is the region of your program in which it is defined. Ja
 
    
  ### 1.21 What is shallow copied in javascript? 
- ## What is shallow copied in javascript?
-
+ 
 A shallow copy is a copy of the object itself. It does not copy the properties of the object. It just copies the reference to the object.
 
 ```javascript
 const obj = {
- a: 1,
- b: 2
+	a: 1,
+	b: 2
 };
 
 const obj2 = obj;
@@ -477,69 +457,59 @@ obj2.a = 2;
 
 console.log(obj2); // {a: 2, b: 2}
 console.log(obj); // {a: 2, b: 2}
-
 ```
  
 
    
  ### 1.22 What is Stack overflow in Javascript? 
- ## What is Stack overflow in Javascript?
-
+ 
 The call stack has a maximum size assigned. Stack Overflow occurs when the number of function calls added to the stack increases the stack’s maximum limit (the call stack has a maximum size). A classic example to cause such a situation is Recursion. Recursion is a process in which a function calls itself until a terminating condition is found.
 
 ```javascript
-function recursion(){ 
-    recursion(); //a function calling itself 
+function recursion() {
+	recursion(); //a function calling itself
 }
 recursion();
 ```
-
-![stack overflow](./stack-overflow.png)
  
 
    
  ### 1.23 What is the aim of the let keyword? 
- ## What is the aim of the let keyword?
-
+ 
 let allows you to declare variables that are limited to the scope of a block statement, or expression on which it is used, unlike the var keyword, which declares a variable globally, or locally to an entire function regardless of block scope.
 
 ```js
-    function varTest() {
-    var x = 1;
-    {
-        var x = 2;  // same variable!
-        console.log(x);  // 2
-    }
-    console.log(x);  // 2
-    }
+function varTest() {
+	var x = 1;
+	{
+		var x = 2; // same variable!
+		console.log(x); // 2
+	}
+	console.log(x); // 2
+}
 
-    function letTest() {
-    let x = 1;
-    {
-        let x = 2;  // different variable
-        console.log(x);  // 2
-    }
-    console.log(x);  // 1
-    }
-
-```  
+function letTest() {
+	let x = 1;
+	{
+		let x = 2; // different variable
+		console.log(x); // 2
+	}
+	console.log(x); // 1
+}
+```
  
 
    
  ### 1.24 What is the Call Stack in JavaScript ? 
- ## What is the Call Stack in JavaScript ?
-
+ 
 The call stack is used by JavaScript to keep track of multiple function calls. It is like a real stack in data structures where data can be pushed and popped and follows the Last In First Out (LIFO) principle. We use call stack for memorizing which function is running right now. The below example demonstrates the call stack.
-
-![callstack](./call-stack.png)
  
 
    
  ### 1.25 What is the creation phase and execution phase in Javascript? 
- ## What is the creation phase and execution phase in Javascript?
-
+ 
 **Creation Phase**
-It picks all function declarations and stores them in memory with their reference.  Also picks all variables and assigns undefined to them.
+It picks all function declarations and stores them in memory with their reference. Also picks all variables and assigns undefined to them.
 
 **Execution Phase**
 In that phase read the code line by line and assigns variable values. and execute functions.
@@ -547,51 +517,48 @@ In that phase read the code line by line and assigns variable values. and execut
 
    
  ### 1.26 What is the difference between DOM and BOM? 
- ## What is the difference between DOM and BOM?
-
+ 
 They're just different objects you're dealing with:
 
 **DOM**
 
- The DOM is the **Document object model** which is deals with the document, the HTML elements themselves, e.g `document` and all traversal you would do in it, events, etc.
+The DOM is the **Document object model** which is deals with the document, the HTML elements themselves, e.g `document` and all traversal you would do in it, events, etc.
 
- **BOM**
+**BOM**
 
- The BOM is the Browser Object Model, which deals with browser components aside from the document, like history, location, navigator and screen (as well as some others that vary by browser).
+The BOM is the Browser Object Model, which deals with browser components aside from the document, like history, location, navigator and screen (as well as some others that vary by browser).
 
-|BOM|DOM|
-|--|--|
-|Is Browser Object Model| Is Document Object Model |
-|Used for access and manipulation of the browser window |Used to manipulate the HTML document.
-|No standard set of rules, each browser has its own standards for implementing BOM | Has a set standard of rules to be used across documents.
+| BOM                                                                               | DOM                                                      |
+| --------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Is Browser Object Model                                                           | Is Document Object Model                                 |
+| Used for access and manipulation of the browser window                            | Used to manipulate the HTML document.                    |
+| No standard set of rules, each browser has its own standards for implementing BOM | Has a set standard of rules to be used across documents. |
  
 
    
  ### 1.27 What is the difference between java and javascript 
- ## What is the difference between java and javascript
-
+ 
 Both are totally unrelated programming languages and no relation between them. Java is statically typed, compiled, runs on its own VM. Whereas Javascript is dynamically typed, interpreted, and runs in a browser and nodejs environments. Let's see the major differences in a tabular format,
 
-| Feature | Java | JavaScript |
-|---- | ---- | -----
-| Typed | It's a strongly typed language | It's a dynamic typed language |
-| Paradigm | Object oriented programming | Prototype based programming |
-| Scoping | Block scoped | Function-scoped |
-| Concurrency | Thread based | event based |
-| Memory | Uses more memory | Uses less memory. Hence it will be used for web pages |
+| Feature     | Java                           | JavaScript                                            |
+| ----------- | ------------------------------ | ----------------------------------------------------- |
+| Typed       | It's a strongly typed language | It's a dynamic typed language                         |
+| Paradigm    | Object oriented programming    | Prototype based programming                           |
+| Scoping     | Block scoped                   | Function-scoped                                       |
+| Concurrency | Thread based                   | event based                                           |
+| Memory      | Uses more memory               | Uses less memory. Hence it will be used for web pages |
  
 
    
  ### 1.28 What is the difference between Shallow and Deep copy 
- ## What is the difference between Shallow and Deep copy
-
+ 
 **Shallow Copy:** Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
 
 ```javascript
 var empDetails = {
-  name: "John",
-  age: 25,
-  expertise: "Software Developer",
+	name: 'John',
+	age: 25,
+	expertise: 'Software Developer'
 };
 ```
 
@@ -604,7 +571,7 @@ var empDetailsShallowCopy = empDetails; //Shallow copying!
 if we change some property value in the duplicate one like this:
 
 ```javascript
-empDetailsShallowCopy.name = "Johnson";
+empDetailsShallowCopy.name = 'Johnson';
 ```
 
 The above statement will also change the name of empDetails, since we have a shallow copy. That means we're losing the original data as well.
@@ -613,9 +580,9 @@ The above statement will also change the name of empDetails, since we have a sha
 
 ```javascript
 var empDetails = {
-  name: "John",
-  age: 25,
-  expertise: "Software Developer",
+	name: 'John',
+	age: 25,
+	expertise: 'Software Developer'
 };
 ```
 
@@ -623,9 +590,9 @@ Create a deep copy by using the properties from the original object into new var
 
 ```javascript
 var empDetailsDeepCopy = {
-  name: empDetails.name,
-  age: empDetails.age,
-  expertise: empDetails.expertise,
+	name: empDetails.name,
+	age: empDetails.age,
+	expertise: empDetails.expertise
 };
 ```
 
@@ -634,65 +601,63 @@ Now if you change empDetailsDeepCopy.name, it will only affect empDetailsDeepCop
 
    
  ### 1.29 What is the Temporal Dead Zone (TDZ) in JavaScript? 
- ## What is the Temporal Dead Zone (TDZ) in JavaScript ?
-
+ 
 A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.
 
 ```js
-    function somemethod() {
-        console.log(counter1); // undefined
-        console.log(counter2); // ReferenceError
-        var counter1 = 1;
-        let counter2 = 2;
-    }
+function somemethod() {
+	console.log(counter1); // undefined
+	console.log(counter2); // ReferenceError
+	var counter1 = 1;
+	let counter2 = 2;
+}
 ```
  
 
    
  ### 1.30 What is use strict mode? 
- ## What is use strict mode?
-
+ 
 ECMAScript 5 introduced the concept of "strict mode" . It allows you to place a program, or a function, in a "strict" operating context. This strict context prevents certain actions from being taken and throws more exceptions . Its main purpose is to do more checking.
 
 **With Strict Mode**
 
 ```javascript
-    'use strict';
-    username = 'Jon';
-    console.log(username);
-    // Uncaught ReferenceError: username is not defined
+'use strict';
+username = 'Jon';
+console.log(username);
+// Uncaught ReferenceError: username is not defined
 ```
+
 **WithOut Strict Mode**
 
 ```javascript
-    username = 'Jon';
-    console.log(username);
-    //Jon
-``` 
+username = 'Jon';
+console.log(username);
+//Jon
+```
+ 
 
    
  ### 1.31 What paradigm is Javascript ? 
- ## What paradigm is Javascript ?
-
+ 
 JavaScript is a multi-paradigm language, supporting imperative/procedural programming, Object-Oriented Programming and functional programming. JavaScript supports Object-Oriented Programming with prototypical inheritance.
  
 
    
  ### 1.32 when does  document load  get executed? 
- ## when does  document load  get executed?
-
-The load event is fired when the whole page has loaded, including all dependent resources(stylesheets, images). 
+ 
+The load event is fired when the whole page has loaded, including all dependent resources(stylesheets, images).
+ 
 
    
  ### 1.33 when does DOMContentLoaded get executed? 
- ## when does DOMContentLoaded get executed?
-
-when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading 
+ 
+when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading
+ 
 
    
  ### 1.34 Why should we use ES6 classes? 
- ## Why should we use ES6 classes?
-
+ 
 ES6 classes are syntactic sugar for the prototypical class system we use today. They make code more concise and self-documenting, which is reason enough to use them.
 
 - The syntax is more clear and less error-prone
@@ -704,17 +669,17 @@ ES6 classes are syntactic sugar for the prototypical class system we use today. 
 **WithOut ES6 class:**
 
 ```javascript
-    var Foo = (function () {
-    function Foo(bar) {    
-        this._bar = bar;
-    }
+var Foo = (function () {
+	function Foo(bar) {
+		this._bar = bar;
+	}
 
-    Foo.prototype.getBar = function () {
-        return this._bar;
-    }
+	Foo.prototype.getBar = function () {
+		return this._bar;
+	};
 
-    return Foo;
-    })();
+	return Foo;
+})();
 ```
 
 **With ES6 class:**
@@ -722,13 +687,13 @@ The syntax is also way more clean and easier to understand.
 
 ```javascript
 class Foo {
-    constructor(bar) {
-        this._bar = bar;
-    }
+	constructor(bar) {
+		this._bar = bar;
+	}
 
-    getBar() {
-        return this._bar;
-    }
+	getBar() {
+		return this._bar;
+	}
 }
 ```
  
