@@ -44,12 +44,12 @@ import path from 'path';
 		.join('');
 	const topicsStringForMarkdown = Object.values(topics)
 		.flat(Infinity)
-		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`.trimStart())
+		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title}\n${y?.content}\n`)
 		.join('');
 	// Write the file
 	fs.writeFileSync(
 		'./README.md',
-		`## Table of Contents\n\n${tableOfContentsStringForMarkdown}  <br/><br/><br/><br/> \n\n ${topicsStringForMarkdown}`
+		`## Table of Contents\n\n${tableOfContentsStringForMarkdown}<br/><br/><br/><br/>\n\n${topicsStringForMarkdown}`
 	);
 	fs.writeFileSync('./json/topics.json', JSON.stringify(topics));
 })();
