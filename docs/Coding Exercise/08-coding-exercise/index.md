@@ -5,6 +5,7 @@ source: https://www.toptal.com
 
 <details>
     <summary>Answer</summary>
+
 ```js
 var myArray = ['a', 'b', 'c', 'd'];
 myArray.push('end');
