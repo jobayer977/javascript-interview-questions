@@ -3,6 +3,7 @@ import { existsSync, lstatSync, readFileSync, readdirSync } from 'fs';
 import fs from 'fs';
 import metadataParser from 'markdown-yaml-metadata-parser';
 import path from 'path';
+
 (async function () {
 	const fromDir = (startPath, filter, callback) => {
 		if (!existsSync(startPath)) {
@@ -45,8 +46,10 @@ import path from 'path';
 		})
 		.join('');
 	const topicsStringForMarkdown = Object.entries(topics)
-		.map((x) => {
-			return `# ${x[0]}\n ${x[1].map((y) => `\n ${y?.content} \n`).join('\n   ')}\n`;
+		.map((x, i) => {
+			return `# ${i + 1} ${x[0]}\n ${x[1]
+				.map((y) => `\n ${i + 1} ${y?.content} \n`)
+				.join('\n   ')}\n`;
 		})
 		.join('');
 	// Write the file
