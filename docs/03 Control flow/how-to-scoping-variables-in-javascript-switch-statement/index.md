@@ -1,7 +1,6 @@
 ---
-title:  How to Scoping variables in JavaScript switch statement?
+title: How to Scoping variables in JavaScript switch statement?
 ---
-## How to Scoping variables in JavaScript switch statement?
 
 when you declare variable in case statements, they would hoisted to the switch statement. I would show you a very simple way to make sure the variables you declare in your case statements can only be accessed from that block.
 
@@ -11,7 +10,7 @@ One important point to remember is that each case statement is not a block. Vari
     let number  = 2;
 
     switch (number) {
-        case 1: 
+        case 1:
             let message = "first number";
             console.log(message)
             break;
@@ -29,7 +28,7 @@ One important point to remember is that each case statement is not a block. Vari
             break;
     }
 
-    //This throws a syntax error: identifier "message" 
+    //This throws a syntax error: identifier "message"
     //has already been declared
 ```
 
@@ -50,7 +49,7 @@ There are cases where you might need yo hold different variable values in each o
             break;
         }
         case 3: {
-            let message = "number" + number; 
+            let message = "number" + number;
             console.log(message)
             break;
         }

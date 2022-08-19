@@ -1,7 +1,6 @@
 ---
-title:  What are the 4 pillars of OOP?
+title: What are the 4 pillars of OOP?
 ---
-## What are the 4 pillars of OOP?
 
 - 1. Abstraction
 - 2. Encapsulation

@@ -1,15 +1,14 @@
 ---
-title:  What is the use of break and continue statement in JavaScript?
+title: What is the use of break and continue statement in JavaScript?
 ---
-## What is the use of break and continue statement in JavaScript?
 
 **Break Statement**
 The break statement is used at an instance whereby satisfying the condition being specified, the whole loop gets skipped and it takes you out of the loop. In other words, the loop is stopped
 
 ```javascript
-for (i=1; i<=8; i++){
-  if (i === 5) break;
-  console.log(i);
+for (i = 1; i <= 8; i++) {
+	if (i === 5) break;
+	console.log(i);
 }
 ```
 
@@ -22,8 +21,7 @@ Whenever a continue statement takes place, the loop condition is checked to see 
 
 ```javascript
 for (i = 1; i < 8; i++) {
-  if (i === 3 || i === 4)
-  continue;
-  console.log(i);
+	if (i === 3 || i === 4) continue;
+	console.log(i);
 }
 ```

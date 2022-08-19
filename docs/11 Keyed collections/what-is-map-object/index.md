@@ -1,7 +1,6 @@
 ---
-title:  What is Map object?
+title: What is Map object?
 ---
-## What is Map object?
 
 A map is an object that holds key-value pairs. Each key is unique on the map. The value can be any type, even another map. A map is an iterable object. It has a forEach() method, which can be used to iterate over all key-value pairs in the map. The map is a collection of key-value pairs.
 
@@ -18,10 +17,9 @@ map.set('3', 'c');
 
 // Iterate over all key-value pairs in the map
 map.forEach(function (value, key) {
- console.log(key + ' = ' + value);
+	console.log(key + ' = ' + value);
 });
 // 1 = a
 // 2 = b
 // 3 = c
-
 ```

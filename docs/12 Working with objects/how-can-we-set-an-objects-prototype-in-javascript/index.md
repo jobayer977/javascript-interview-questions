@@ -1,7 +1,6 @@
 ---
-title:  How can we set an object's prototype in JavaScript ?
+title: How can we set an object's prototype in JavaScript ?
 ---
-## How can we set an object's prototype in JavaScript ?
 
 **Using `Object.create`**
 The `Object.create()` method created a new object and allows you to specify an object that will be used as the new objects' prototype.
@@ -10,10 +9,10 @@ Here's an example:-
 
 ```javascript
 const personPrototype = {
-  greet() {
-    console.log('hello!');
-  }
-}
+	greet() {
+		console.log('hello!');
+	}
+};
 
 const carl = Object.create(personPrototype);
 carl.greet(); // hello!

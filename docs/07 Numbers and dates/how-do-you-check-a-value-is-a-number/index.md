@@ -1,7 +1,6 @@
 ---
-title:  How do you check a value is a number?
+title: How do you check a value is a number?
 ---
-## How do you check a value is a number?
 
 The `isNaN()` method determines whether a value is an illegal number. If the value is not a number, then the method returns true. Otherwise, it returns false.
 

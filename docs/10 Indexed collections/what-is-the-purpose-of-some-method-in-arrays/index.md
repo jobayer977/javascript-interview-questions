@@ -1,7 +1,6 @@
 ---
-title:  What is the purpose of some method in arrays ?
+title: What is the purpose of some method in arrays ?
 ---
-## What is the purpose of some method in arrays ?
 
 The some() method is used to test whether at least one element in the array passes the test implemented by the provided function. The method returns a boolean value. Let's take an example to test for any odd elements,
 

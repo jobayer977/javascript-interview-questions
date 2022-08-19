@@ -1,9 +1,8 @@
 ---
-title:   What is cookies ?
+title: What is cookies ?
 ---
-## What is cookies ?
 
- Cookies are small pieces of data that are stored on the user's computer.  Cookies are widely used in websites to remember the user's preferences and to track the user's browsing activity.
+Cookies are small pieces of data that are stored on the user's computer. Cookies are widely used in websites to remember the user's preferences and to track the user's browsing activity.
 
 ```javascript
 document.cookie = 'username=John Doe';
@@ -13,12 +12,10 @@ document.cookie = 'username=John Doe';
 
 ```javascript
 document.cookie = 'username=John Doe; max-age=2592000';
-
 ```
 
 **Get the cookie**
 
 ```javascript
 document.cookie; // 'username=John Doe'
-
 ```

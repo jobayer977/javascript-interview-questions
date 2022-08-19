@@ -1,15 +1,14 @@
 ---
-title:  Difference between getOwnPropertyNames vs Object.keys ?
+title: Difference between getOwnPropertyNames vs Object.keys ?
 ---
-## Difference between getOwnPropertyNames vs Object.keys ?
 
- getOwnPropertyNames returns only enumerable properties, Object.keys returns all properties.
+getOwnPropertyNames returns only enumerable properties, Object.keys returns all properties.
 
 ```javascript
 var obj = {
- a: 1,
- b: 2,
- c: 3
+	a: 1,
+	b: 2,
+	c: 3
 };
 ```
 
@@ -27,5 +26,4 @@ getOwnPropertyNames returns all properties of an object.
 
 ```javascript
 console.log(Object.getOwnPropertyNames(obj)); // [ 'a', 'b', 'c' ]
-
 ```

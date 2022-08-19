@@ -1,7 +1,6 @@
 ---
-title:  How do you make string first letter capitalized?
+title: How do you make string first letter capitalized?
 ---
-## How do you make strings first letter capitalized?
 
 The first letter of the string is capitalized using the `toUpperCase()` method. So first we need to get the first letter of the string and then we can use the `toUpperCase()` method to capitalize it.
 

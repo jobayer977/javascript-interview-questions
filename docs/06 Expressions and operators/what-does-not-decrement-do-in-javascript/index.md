@@ -1,7 +1,6 @@
 ---
-title:  What does "!--" do in JavaScript?
+title: What does "!--" do in JavaScript?
 ---
-## What does "!--" do in JavaScript?
 
 That's not a special operator, it's 2 standard operators one after the other:
 

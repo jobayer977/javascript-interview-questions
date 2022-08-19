@@ -1,7 +1,6 @@
 ---
-title:  What is strict mode?
+title: What is strict mode?
 ---
-## What is strict mode?
 
 Strict mode is a way to tell the JavaScript engine to be more strict when running your code. Strict mode changes some of the ways that JavaScript treats your code to be more predictable and to prevent you from making errors. Strict mode is not a way to enforce the coding style of your code, but it can help you to be more predictable.
 
@@ -17,8 +16,7 @@ Strict mode can be enabled by adding the strict mode directive at the beginning 
 
 ```javascript
 function foo() {
- 'use strict';
- return this;
+	'use strict';
+	return this;
 }
-
 ```

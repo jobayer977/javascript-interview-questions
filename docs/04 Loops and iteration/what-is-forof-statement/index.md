@@ -1,16 +1,15 @@
 ---
-title:  What is for...of statement
+title: What is for...of statement
 ---
-## What is for...of statement
 
 The JavaScript for of statement loops through the values of an iterable object. It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
 
 ```javascript
-const cars = ["BMW", "Volvo", "Mini"];
+const cars = ['BMW', 'Volvo', 'Mini'];
 
-let text = "";
+let text = '';
 for (let x of cars) {
-  text += x;
+	text += x;
 }
 
 // BMW

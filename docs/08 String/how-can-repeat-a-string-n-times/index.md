@@ -1,7 +1,6 @@
 ---
-title:  How can repeat a string n times?
+title: How can repeat a string n times?
 ---
-## How can repeat a string n times?
 
 We can use the repeat method. Repeat method takes a string and a number and returns a new string that is n times the original string.
 

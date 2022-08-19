@@ -1,7 +1,6 @@
 ---
-title:  What is difference between Map and Object?
+title: What is difference between Map and Object?
 ---
-## What is difference between Map and Object?
 
 Map is a data structure which helps in storing the data in the form of pairs. The pair consists of a unique key and a value mapped to the key. It helps prevent duplicity.
 Object follows the same concept as that of map i.e. using key-value pair for storing data. But there are slight differences which makes map a better performer in certain situations.

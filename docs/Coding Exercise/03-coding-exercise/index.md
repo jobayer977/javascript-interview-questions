@@ -2,8 +2,6 @@
 title: What is the output of below code
 ---
 
-## What is the output of below code ?
-
 ```javascript
 var arr1 = 'john'.split('');
 var arr2 = arr1.reverse();

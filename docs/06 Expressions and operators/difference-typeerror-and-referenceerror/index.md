@@ -1,7 +1,6 @@
 ---
-title:  Difference TypeError and ReferenceError ?
+title: Difference TypeError and ReferenceError ?
 ---
-## Difference TypeError and ReferenceError ?
 
 A **ReferenceError** occurs when you try to use a variable that doesn't exist at all.
 
