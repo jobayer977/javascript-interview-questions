@@ -43,7 +43,7 @@ import path from 'path';
 			return `- ### [${x[0]}](#${slugify(x[0])})\n   ${x[1]
 				.map(
 					(y, yIndex) =>
-						`- [${i + 1}.${yIndex + 1} ${y.title}](#${i + 1}-${yIndex + 1}-${slugify(y?.title)})`
+						`- [${i + 1}.${yIndex + 1} ${y.title}](#${i + 1}.${yIndex + 1}-${slugify(y?.title)})`
 				)
 				.join('\n   ')}\n`;
 		})
@@ -51,7 +51,7 @@ import path from 'path';
 	const topicsStringForMarkdown = Object.entries(topics)
 		.map((x, i) => {
 			return `## ${x[0]}\n ${x[1]
-				.map((y, yIndex) => `\n ### ${i + 1}-${yIndex + 1} ${y?.title} \n ${y?.content} \n`)
+				.map((y, yIndex) => `\n ### ${i + 1}.${yIndex + 1} ${y?.title} \n ${y?.content} \n`)
 				.join('\n   ')}\n`;
 		})
 		.join('');
