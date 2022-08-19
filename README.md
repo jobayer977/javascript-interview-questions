@@ -180,22 +180,24 @@
 - [171 Array concat polyfill](#array-concat-polyfill)
 - [172 Array copywithin polyfill](#array-copywithin-polyfill)
 - [173 Array every polyfill](#array-every-polyfill)
-- [174 Array every polyfill](#array-every-polyfill)
-- [175 What is the output of below code](#what-is-the-output-of-below-code)
-- [176 What is the output of below code](#what-is-the-output-of-below-code)
-- [177 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
-- [178 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
-- [179 What will be the output of this code?](#what-will-be-the-output-of-this-code)
-- [180 What will this code print?](#what-will-this-code-print)
-- [181 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
-- [182 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
-- [183 What would following code return?](#what-would-following-code-return)
-- [184 What will the following code output and why?](#what-will-the-following-code-output-and-why)
-- [185 What is the output of below code ?](#what-is-the-output-of-below-code)
-- [186 What is the output of below code ?](#what-is-the-output-of-below-code)
-- [187 What's the output?](#whats-the-output)
-- [188 What's the output?](#whats-the-output)
+- [174 Array fill polyfill](#array-fill-polyfill)
+- [175 Array filter polyfill](#array-filter-polyfill)
+- [176 Array find polyfill](#array-find-polyfill)
+- [177 What is the output of below code](#what-is-the-output-of-below-code)
+- [178 What is the output of below code](#what-is-the-output-of-below-code)
+- [179 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
+- [180 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
+- [181 What will be the output of this code?](#what-will-be-the-output-of-this-code)
+- [182 What will this code print?](#what-will-this-code-print)
+- [183 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
+- [184 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
+- [185 What would following code return?](#what-would-following-code-return)
+- [186 What will the following code output and why?](#what-will-the-following-code-output-and-why)
+- [187 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [188 What is the output of below code ?](#what-is-the-output-of-below-code)
 - [189 What's the output?](#whats-the-output)
+- [190 What's the output?](#whats-the-output)
+- [191 What's the output?](#whats-the-output)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3221,7 +3223,7 @@ Array.prototype.everyImpl = function (callback) {
 
 </details>
 
-174. ### Array every polyfill
+174. ### Array fill polyfill
 
 <details>
     <summary>Answer</summary>
@@ -3237,7 +3239,42 @@ Array.prototype.fillImpl = function (value, start, end) {
 ```
 </details>
 
-175. ### What is the output of below code
+175. ### Array filter polyfill
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.filterImpl = function (callback) {
+	const result = []
+	for (let i = 0; i < this.length; i++) {
+		if (callback(this[i], i, this)) {
+			result.push(this[i])
+		}
+	}
+	return result
+}
+```
+</details>
+
+176. ### Array find polyfill
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.findImpl = function (callback) {
+	for (let i = 0; i < this.length; i++) {
+		if (callback(this[i])) {
+			return this[i]
+		}
+	}
+	return undefined
+}
+```
+</details>
+
+177. ### What is the output of below code
 
 ```javascript
 console.log(sum(2, 3)); // Outputs 5
@@ -3261,7 +3298,7 @@ function sum(x) {
 
 </details>
 
-176. ### What is the output of below code
+178. ### What is the output of below code
 
 ```javascript
 var arr1 = 'john'.split('');
@@ -3283,7 +3320,7 @@ console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));
 
 </details>
 
-177. ### What will the following code output to the console and why?
+179. ### What will the following code output to the console and why?
 
 ```javascript
 var hero = {
@@ -3319,7 +3356,7 @@ var stoleSecretIdentity = hero.getSecretIdentity.bind(hero);
 
 </details>
 
-178. ### Consider the following code. What will the output be, and why?
+180. ### Consider the following code. What will the output be, and why?
 
 ```javascript
 (function () {
@@ -3364,7 +3401,7 @@ var statements are hoisted (without their value initialization) to the top of th
 
 </details>
 
-179. ### What will be the output of this code?
+181. ### What will be the output of this code?
 
 ```javascript
 var x = 21;
@@ -3409,7 +3446,7 @@ It’s because JavaScript initialization is not hoisted.
 
 </details>
 
-180. ### What will this code print?
+182. ### What will this code print?
 
 ```javascript
 var x = 21;
@@ -3435,7 +3472,7 @@ It will print 0 1 2 3 4, because we use let instead of var here. The variable i 
 
 </details>
 
-181. ### How do you add an element at the begining of an array? How do you add one at the end?
+183. ### How do you add an element at the begining of an array? How do you add one at the end?
 
 <details>
     <summary>Answer</summary>
@@ -3455,7 +3492,7 @@ myArray = ['start', ...myArray, 'end'];
 
 </details>
 
-182. ### What is the value of typeof undefined == typeof NULL?
+184. ### What is the value of typeof undefined == typeof NULL?
 
 <details>
     <summary>Answer</summary>
@@ -3466,7 +3503,7 @@ Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 </details>
 
-183. ### What would following code return?
+185. ### What would following code return?
 
 ```js
 console.log(typeof typeof 1);
@@ -3480,7 +3517,7 @@ typeof 1 will return `"number"` and typeof `"number"` will return `string`.
 
 </details>
 
-184. ### What will the following code output and why?
+186. ### What will the following code output and why?
 
 ```js
 var b = 1;
@@ -3516,7 +3553,7 @@ function inner() {
 
 </details>
 
-185. ### What is the output of below code ?
+187. ### What is the output of below code ?
 
 ```js
 var car = new Vehicle('Honda', 'white', '2010', 'UK');
@@ -3536,7 +3573,7 @@ The function declarations are hoisted similar to any variables. So the placement
 
 </details>
 
-186. ### What is the output of below code ?
+188. ### What is the output of below code ?
 
 ```js
 function foo() {
@@ -3562,7 +3599,7 @@ x = window.y;
 
 </details>
 
-187. ### What's the output?
+189. ### What's the output?
 
 ```js
 function sayHi() {
@@ -3584,7 +3621,7 @@ Variables with the let keyword (and const) are hoisted, but unlike var, don't ge
 
 </details>
 
-188. ### What's the output?
+190. ### What's the output?
 
 ```js
 let c = { greeting: 'Hey!' }
@@ -3605,7 +3642,7 @@ When you change one object, you change all of them.
 
 </details>
 
-189. ### What's the output?
+191. ### What's the output?
 
 ```js
 class Chameleon {
