@@ -48,13 +48,18 @@ import path from 'path';
 				.join('\n   ')}\n`;
 		})
 		.join('');
-	const topicsStringForMarkdown = Object.entries(topics)
-		.map((x, i) => {
-			return `# ${x[0]}\n ${x[1]
-				.map((y, yIndex) => `\n ## ${i + 1}.${yIndex + 1} ${y?.title} \n ${y?.content} \n`)
-				.join('\n   ')}\n`;
-		})
-		.join('');
+	// const topicsStringForMarkdown = Object.entries(topics)
+	// 	.map((x, i) => {
+	// 		return `# ${x[0]}\n ${x[1]
+	// 			.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`)
+	// 			.join('\n   ')}\n`;
+	// 	})
+	// 	.join('');
+	const topicsStringForMarkdown = Object.values(topics)
+		.flat(Infinity)
+		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`)
+		.join('\n');
+
 	// Write the file
 	fs.writeFileSync(
 		'./README.md',
