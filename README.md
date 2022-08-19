@@ -170,6 +170,8 @@
 - [168 What are closures scope chains?](#what-are-closures-scope-chains)
 - [169 What is the output of below code](#what-is-the-output-of-below-code)
 - [170 What is the output of below code](#what-is-the-output-of-below-code)
+- [171 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
+- [172 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3164,6 +3166,87 @@ console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));
 ```javascript
 // array 1: length=5 last=j,o,n,e,s
 // array 2: length=5 last=j,o,n,e,s
+```
+
+</details>
+
+171. ### What will the following code output to the console and why?
+
+```javascript
+var hero = {
+	_name: 'John Doe',
+	getSecretIdentity: function () {
+		return this._name;
+	}
+};
+
+var stoleSecretIdentity = hero.getSecretIdentity;
+
+console.log(stoleSecretIdentity());
+console.log(hero.getSecretIdentity());
+```
+
+<details>
+    <summary>Answer</summary>
+
+The code will output:
+
+```js
+undefined
+John Doe
+```
+
+The first `console.log` prints undefined because we are extracting the method from the hero object, so stoleSecretIdentity() is being invoked in the global context (i.e., the window object) where the \_name property does not exist.
+
+One way to fix the stoleSecretIdentity() function is as follows:
+
+```js
+var stoleSecretIdentity = hero.getSecretIdentity.bind(hero);
+```
+
+</details>
+
+172. ### Consider the following code. What will the output be, and why?
+
+```javascript
+(function () {
+	try {
+		throw new Error();
+	} catch (x) {
+		var x = 1,
+			y = 2;
+		console.log('INSIDE', x);
+		console.log('INSIDE', y);
+	}
+	console.log('OUTSIDE', x);
+	console.log('OUTSIDE', y);
+})();
+```
+
+<details>
+    <summary>Answer</summary>
+
+```js
+1;
+undefined;
+2;
+```
+
+var statements are hoisted (without their value initialization) to the top of the global or function scope it belongs to, even when it’s inside a with or catch block. However, the error’s identifier is only visible inside the catch block. It is equivalent to:
+
+```js
+(function () {
+	var x, y; // outer and hoisted
+	try {
+		throw new Error();
+	} catch (x /* inner */) {
+		x = 1; // inner x, not the outer one
+		y = 2; // there is only one y, which is in the outer scope
+		console.log(x /* inner */);
+	}
+	console.log(x);
+	console.log(y);
+})();
 ```
 
 </details>

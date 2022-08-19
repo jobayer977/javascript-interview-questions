@@ -1,6 +1,16 @@
-const content =
-	"\n## Can I redeclare let and const variables?\n\nNo, you cannot redeclare let and const variables. If you do, it throws below error\n\n```properties\nUncaught SyntaxError: Identifier 'someVariable' has already been declared\n```\n";
+(function () {
+	try {
+		throw new Error();
+	} catch (x) {
+		var x = 1,
+			y = 2;
+		console.log('INSIDE', x);
+		console.log('INSIDE', y);
+	}
+	console.log('OUTSIDE', x);
+	console.log('OUTSIDE', y);
+})();
 
-// Remove first line
-const contentWithoutFirstHeading = content.replace(/^#.*\n/, '');
-console.log(contentWithoutFirstHeading);
+// 1
+// 1
+// 2
