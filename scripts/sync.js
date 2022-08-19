@@ -5,6 +5,20 @@ import metadataParser from 'markdown-yaml-metadata-parser';
 import path from 'path';
 
 (async function () {
+	const resources = [
+		{
+			title: 'Interview-questions - by Toptal',
+			url: 'https://www.toptal.com/javascript/interview-questions'
+		},
+		{
+			title: 'Javascript-interview-questions - by sudheerj',
+			url: 'https://github.com/sudheerj/javascript-interview-questions'
+		},
+		{
+			title: 'javascript-questions - by lydiahallie',
+			url: 'https://github.com/lydiahallie/javascript-questions'
+		}
+	];
 	const fromDir = (startPath, filter, callback) => {
 		if (!existsSync(startPath)) {
 			console.log('no dir ', startPath);
@@ -46,10 +60,15 @@ import path from 'path';
 		.flat(Infinity)
 		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title}\n${y?.content}\n`)
 		.join('');
+
+	const resourcesStringForMarkdown = resources
+		.map((y, yIndex) => `[${y.title}](${y.url})\n`)
+		.join('');
+	console.log(resourcesStringForMarkdown);
 	// Write the file
 	fs.writeFileSync(
 		'./README.md',
-		`## Table of Contents\n\n${tableOfContentsStringForMarkdown}<br/><br/><br/><br/>\n\n${topicsStringForMarkdown}`
+		`### Resources \n${resourcesStringForMarkdown} \n\n ## Table of Contents\n\n${tableOfContentsStringForMarkdown}<br/><br/><br/><br/>\n\n${topicsStringForMarkdown}`
 	);
 	fs.writeFileSync('./json/topics.json', JSON.stringify(topics));
 })();

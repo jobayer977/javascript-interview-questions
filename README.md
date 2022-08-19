@@ -1,3 +1,9 @@
+### Resources
+
+[Interview-questions - by Toptal](https://www.toptal.com/javascript/interview-questions)
+[Javascript-interview-questions - by sudheerj](https://github.com/sudheerj/javascript-interview-questions)
+[javascript-questions - by lydiahallie](https://github.com/lydiahallie/javascript-questions)
+
 ## Table of Contents
 
 - [1 Can I redeclare let and const variables?](#can-i-redeclare-let-and-const-variables)
@@ -7,7 +13,7 @@
 - [5 How garbage collection works in JavaScript ?](#how-garbage-collection-works-in-javascript)
 - [6 List down some of the features of ES6 ?](#list-down-some-of-the-features-of-es6)
 - [7 What are global variables ?](#what-are-global-variables)
-- [8 What are  namespaces?](#what-are-namespaces)
+- [8 What are namespaces?](#what-are-namespaces)
 - [9 What are PWAs used for?](#what-are-pwas-used-for)
 - [10 What are raw strings?](#what-are-raw-strings)
 - [11 What are some unique features of JavaScript ?](#what-are-some-unique-features-of-javascript)
@@ -31,7 +37,7 @@
 - [29 What is the Temporal Dead Zone (TDZ) in JavaScript?](#what-is-the-temporal-dead-zone-tdz-in-javascript)
 - [30 What is use strict mode?](#what-is-use-strict-mode)
 - [31 What paradigm is Javascript ?](#what-paradigm-is-javascript)
-- [32 when does  document load  get executed?](#when-does-document-load-get-executed)
+- [32 when does document load get executed?](#when-does-document-load-get-executed)
 - [33 when does DOMContentLoaded get executed?](#when-does-domcontentloaded-get-executed)
 - [34 Why should we use ES6 classes?](#why-should-we-use-es6-classes)
 - [35 How do you load CSS and JS files dynamically ?](#how-do-you-load-css-and-js-files-dynamically)
@@ -118,7 +124,7 @@
 - [116 What is Map object?](#what-is-map-object)
 - [117 What is the purpose of the Set in javascript?](#what-is-the-purpose-of-the-set-in-javascript)
 - [118 Difference between getOwnPropertyNames vs Object.keys ?](#difference-between-getownpropertynames-vs-objectkeys)
-- [119 How can access an object's  values?](#how-can-access-an-objects-values)
+- [119 How can access an object's values?](#how-can-access-an-objects-values)
 - [120 How can we set an object's prototype in JavaScript ?](#how-can-we-set-an-objects-prototype-in-javascript)
 - [121 How do you get objects all prototypes ?](#how-do-you-get-objects-all-prototypes)
 - [122 How do you get property descriptors of an object](#how-do-you-get-property-descriptors-of-an-object)
@@ -180,7 +186,7 @@
 - [178 What will the following code output and why?](#what-will-the-following-code-output-and-why)
 - [179 What is the output of below code ?](#what-is-the-output-of-below-code)
 - [180 What is the output of below code ?](#what-is-the-output-of-below-code)
-<br/><br/><br/><br/>
+  <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
 
@@ -269,7 +275,7 @@ Global variables are those that are available throughout the length of the code 
 msg = 'Hello'; // var is missing, it becomes global variable
 ```
 
-8. ### What are  namespaces?
+8. ### What are namespaces?
 
 The namespace is a programming paradigm it's used to avoid variable naming collisions. Help to organize code into logical groups. JavaScript does not provide namespace by default. However, we can replicate this functionality by making a global object which can contain all functions and variables.
 
@@ -318,7 +324,7 @@ There are at least three great things about JavaScript:
 2. Simple and easy to understand syntax.
 3. Supported by all modern browsers and enabled by default in all modern browsers.
 
-12. ### What are the benefit of event delegation?
+4. ### What are the benefit of event delegation?
 
 Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
 
@@ -570,7 +576,7 @@ console.log(username);
 
 JavaScript is a multi-paradigm language, supporting imperative/procedural programming, Object-Oriented Programming and functional programming. JavaScript supports Object-Oriented Programming with prototypical inheritance.
 
-32. ### when does  document load  get executed?
+32. ### when does document load get executed?
 
 The load event is fired when the whole page has loaded, including all dependent resources(stylesheets, images).
 
@@ -2227,7 +2233,7 @@ getOwnPropertyNames returns all properties of an object.
 console.log(Object.getOwnPropertyNames(obj)); // [ 'a', 'b', 'c' ]
 ```
 
-119. ### How can access an object's  values?
+119. ### How can access an object's values?
 
 There are two ways to access an object's values. One is using the dot notation and the other is using the bracket notation.
 
@@ -2866,28 +2872,28 @@ promise1
 Iterable is an object that has a next method. This method returns an object with a value and done properties. The value property is the next value in the sequence and the done property is a boolean that is true if there are no more values in the sequence. The next method is used to get the next value in the sequence.
 
 150. ### What is purpose of proxies in javascript?
+
 ## What is purpose of proxies in javascript?
 
 Proxy is a function that takes two arguments, the first is the object to be proxied and the second is the handler object. The handler object has properties that define the behavior of the proxy.
 
 ```javascript
 const handler = {
- get: function (target, name) {
-  console.log(`Getting ${name}`);
-  console.log(target);
-  return name in target ? target[name] : 'N/A';
- }
+	get: function (target, name) {
+		console.log(`Getting ${name}`);
+		console.log(target);
+		return name in target ? target[name] : 'N/A';
+	}
 };
 
 const target = {
- name: 'John',
- age: 30
+	name: 'John',
+	age: 30
 };
 
 const proxy = new Proxy(target, handler);
 
 console.log(proxy.name); // John
-
 ```
 
 151. ### Difference between default export and named export ?
@@ -3456,4 +3462,3 @@ x = window.y;
 ```
 
 </details>
-
