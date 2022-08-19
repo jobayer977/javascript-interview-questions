@@ -40,7 +40,7 @@ import path from 'path';
 	});
 	const tableOfContentsStringForMarkdown = Object.values(topics)
 		.flat(Infinity)
-		.map((y, i) => `- [${i + 1} ${y?.title}](#${i + 1}-${slugify(y?.title)})\n`)
+		.map((y, i) => `- [${i + 1} ${y?.title}](#${slugify(y?.title)})\n`)
 		.join('');
 	const topicsStringForMarkdown = Object.values(topics)
 		.flat(Infinity)
