@@ -187,6 +187,8 @@
 - [178 What will the following code output and why?](#what-will-the-following-code-output-and-why)
 - [179 What is the output of below code ?](#what-is-the-output-of-below-code)
 - [180 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [181 What's the output?](#whats-the-output)
+- [182 What's the output?](#whats-the-output)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3461,6 +3463,49 @@ let x;
 window.y = 0;
 x = window.y;
 ```
+
+</details>
+
+181. ### What's the output?
+
+```js
+function sayHi() {
+	console.log(name)
+	console.log(age)
+	var name = 'Lydia'
+	let age = 21
+}
+
+sayHi()
+```
+
+<details>
+    <summary>Answer</summary>
+
+Within the function, we first declare the name variable with the var keyword. This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of undefined, until we actually get to the line where we define the variable. We haven't defined the variable yet on the line where we try to log the name variable, so it still holds the value of undefined.
+
+Variables with the let keyword (and const) are hoisted, but unlike var, don't get initialized. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a ReferenceError.
+
+</details>
+
+182. ### What's the output?
+
+```js
+let c = { greeting: 'Hey!' }
+let d
+
+d = c
+c.greeting = 'Hello'
+console.log(d.greeting)
+```
+
+<details>
+    <summary>Answer</summary>
+
+In JavaScript, all objects interact by reference when setting them equal to each other.
+
+First, variable c holds a value to an object. Later, we assign d with the same reference that c has to the object.
+When you change one object, you change all of them.
 
 </details>
 
