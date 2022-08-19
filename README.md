@@ -175,20 +175,27 @@
 - [166 Why do we use web workers?](#why-do-we-use-web-workers)
 - [167 What are closures?](#what-are-closures)
 - [168 What are closures scope chains?](#what-are-closures-scope-chains)
-- [169 What is the output of below code](#what-is-the-output-of-below-code)
-- [170 What is the output of below code](#what-is-the-output-of-below-code)
-- [171 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
-- [172 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
-- [173 What will be the output of this code?](#what-will-be-the-output-of-this-code)
-- [174 What will this code print?](#what-will-this-code-print)
-- [175 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
-- [176 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
-- [177 What would following code return?](#what-would-following-code-return)
-- [178 What will the following code output and why?](#what-will-the-following-code-output-and-why)
-- [179 What is the output of below code ?](#what-is-the-output-of-below-code)
-- [180 What is the output of below code ?](#what-is-the-output-of-below-code)
-- [181 What's the output?](#whats-the-output)
-- [182 What's the output?](#whats-the-output)
+- [169 How does a web browser work](#how-does-a-web-browser-work)
+- [170 Array at polyfill](#array-at-polyfill)
+- [171 Array concat polyfill](#array-concat-polyfill)
+- [172 Array copywithin polyfill](#array-copywithin-polyfill)
+- [173 Array every polyfill](#array-every-polyfill)
+- [174 Array every polyfill](#array-every-polyfill)
+- [175 What is the output of below code](#what-is-the-output-of-below-code)
+- [176 What is the output of below code](#what-is-the-output-of-below-code)
+- [177 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
+- [178 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
+- [179 What will be the output of this code?](#what-will-be-the-output-of-this-code)
+- [180 What will this code print?](#what-will-this-code-print)
+- [181 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
+- [182 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
+- [183 What would following code return?](#what-would-following-code-return)
+- [184 What will the following code output and why?](#what-will-the-following-code-output-and-why)
+- [185 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [186 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [187 What's the output?](#whats-the-output)
+- [188 What's the output?](#whats-the-output)
+- [189 What's the output?](#whats-the-output)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3141,7 +3148,96 @@ console.log(innerFunction(30)); // 50
 
 Closures are functions that have access to the outer function’s variables even after the outer function has returned. This is useful when you want to return a function from a function and you want to be able to access the outer function’s variables. Every closure has three scopes: its scope, the outer function’s scope, and the global scope.
 
-169. ### What is the output of below code
+169. ### How does a web browser work
+
+## How does a web browser work
+
+Browser is a program that runs in the background and is responsible for rendering the web page. When a web page is requested, the browser sends a request to the server. The server then sends the web page back to the browser. When the web browser fetches data from an internet connected server, it uses a piece of software called a rendering engine to translate that data into text and images. This data is written in Hypertext Markup Language (HTML) and web browsers read this code to create what we see, hear and experience on the internet.
+
+170. ### Array at polyfill
+
+<details>
+    <summary>Answer</summary>
+
+```js
+Array.prototype.atImpl = function (index) {
+	return this[index]
+}
+```
+
+</details>
+
+171. ### Array concat polyfill
+
+<details>
+    <summary>Answer</summary>
+```js
+Array.prototype.concatImpl = function (arr) {
+	const newArr = this.slice()
+	newArr.push(...arr)
+	return newArr
+}
+```
+</details>
+
+172. ### Array copywithin polyfill
+
+<details>
+    <summary>Answer</summary>
+
+```js
+function copyWithin(array, target, start, end) {
+	let shift = target - start
+	if (shift < 0) {
+		end = Math.min(end, array.length)
+		for (let i = start; i < end; i++) {
+			array[i + shift] = array[i]
+		}
+	} else {
+		for (let i = Math.min(end, array.length - shift) - 1; i >= start; i--) {
+			array[i + shift] = array[i]
+		}
+	}
+	return array
+}
+```
+</details>
+
+173. ### Array every polyfill
+
+<details>
+    <summary>Answer</summary>
+
+```js
+Array.prototype.everyImpl = function (callback) {
+	for (let i = 0; i < this.length; i++) {
+		if (!callback(this[i], i, this)) {
+			return false
+		}
+	}
+	return true
+}
+```
+
+</details>
+
+174. ### Array every polyfill
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.fillImpl = function (value, start, end) {
+	start = start || 0
+	end = end || this.length
+	for (let i = start; i < end; i++) {
+		this[i] = value
+	}
+}
+```
+</details>
+
+175. ### What is the output of below code
 
 ```javascript
 console.log(sum(2, 3)); // Outputs 5
@@ -3165,7 +3261,7 @@ function sum(x) {
 
 </details>
 
-170. ### What is the output of below code
+176. ### What is the output of below code
 
 ```javascript
 var arr1 = 'john'.split('');
@@ -3187,7 +3283,7 @@ console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));
 
 </details>
 
-171. ### What will the following code output to the console and why?
+177. ### What will the following code output to the console and why?
 
 ```javascript
 var hero = {
@@ -3223,7 +3319,7 @@ var stoleSecretIdentity = hero.getSecretIdentity.bind(hero);
 
 </details>
 
-172. ### Consider the following code. What will the output be, and why?
+178. ### Consider the following code. What will the output be, and why?
 
 ```javascript
 (function () {
@@ -3268,7 +3364,7 @@ var statements are hoisted (without their value initialization) to the top of th
 
 </details>
 
-173. ### What will be the output of this code?
+179. ### What will be the output of this code?
 
 ```javascript
 var x = 21;
@@ -3313,7 +3409,7 @@ It’s because JavaScript initialization is not hoisted.
 
 </details>
 
-174. ### What will this code print?
+180. ### What will this code print?
 
 ```javascript
 var x = 21;
@@ -3339,7 +3435,7 @@ It will print 0 1 2 3 4, because we use let instead of var here. The variable i 
 
 </details>
 
-175. ### How do you add an element at the begining of an array? How do you add one at the end?
+181. ### How do you add an element at the begining of an array? How do you add one at the end?
 
 <details>
     <summary>Answer</summary>
@@ -3359,7 +3455,7 @@ myArray = ['start', ...myArray, 'end'];
 
 </details>
 
-176. ### What is the value of typeof undefined == typeof NULL?
+182. ### What is the value of typeof undefined == typeof NULL?
 
 <details>
     <summary>Answer</summary>
@@ -3370,7 +3466,7 @@ Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 </details>
 
-177. ### What would following code return?
+183. ### What would following code return?
 
 ```js
 console.log(typeof typeof 1);
@@ -3384,7 +3480,7 @@ typeof 1 will return `"number"` and typeof `"number"` will return `string`.
 
 </details>
 
-178. ### What will the following code output and why?
+184. ### What will the following code output and why?
 
 ```js
 var b = 1;
@@ -3420,7 +3516,7 @@ function inner() {
 
 </details>
 
-179. ### What is the output of below code ?
+185. ### What is the output of below code ?
 
 ```js
 var car = new Vehicle('Honda', 'white', '2010', 'UK');
@@ -3440,7 +3536,7 @@ The function declarations are hoisted similar to any variables. So the placement
 
 </details>
 
-180. ### What is the output of below code ?
+186. ### What is the output of below code ?
 
 ```js
 function foo() {
@@ -3466,7 +3562,7 @@ x = window.y;
 
 </details>
 
-181. ### What's the output?
+187. ### What's the output?
 
 ```js
 function sayHi() {
@@ -3488,7 +3584,7 @@ Variables with the let keyword (and const) are hoisted, but unlike var, don't ge
 
 </details>
 
-182. ### What's the output?
+188. ### What's the output?
 
 ```js
 let c = { greeting: 'Hey!' }
@@ -3506,6 +3602,31 @@ In JavaScript, all objects interact by reference when setting them equal to each
 
 First, variable c holds a value to an object. Later, we assign d with the same reference that c has to the object.
 When you change one object, you change all of them.
+
+</details>
+
+189. ### What's the output?
+
+```js
+class Chameleon {
+	static colorChange(newColor) {
+		this.newColor = newColor
+		return this.newColor
+	}
+
+	constructor({ newColor = 'green' } = {}) {
+		this.newColor = newColor
+	}
+}
+
+const freddie = new Chameleon({ newColor: 'purple' })
+console.log(freddie.colorChange('orange'))
+```
+
+<details>
+    <summary>Answer</summary>
+    
+The colorChange function is static. Static methods are designed to live only on the constructor in which they are created, and cannot be passed down to any children or called upon class instances. Since freddie is an instance of class Chameleon, the function cannot be called upon it. A TypeError is thrown.
 
 </details>
 
