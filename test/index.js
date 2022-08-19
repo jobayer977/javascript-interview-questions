@@ -1,1 +1,2 @@
-console.log(100 > 10);
+NULL = 10;
+console.log(typeof undefined == typeof NULL);

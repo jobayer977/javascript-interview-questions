@@ -175,6 +175,7 @@
 - [173 What will be the output of this code?](#what-will-be-the-output-of-this-code)
 - [174 What will this code print?](#what-will-this-code-print)
 - [175 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
+- [176 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3329,6 +3330,7 @@ It will print 0 1 2 3 4, because we use let instead of var here. The variable i 
 
 <details>
     <summary>Answer</summary>
+
 ```js
 var myArray = ['a', 'b', 'c', 'd'];
 myArray.push('end');
@@ -3341,6 +3343,17 @@ With ES6, one can use the spread operator:
 ```js
 myArray = ['start', ...myArray, 'end'];
 ```
+
+</details>
+
+176. ### What is the value of typeof undefined == typeof NULL?
+
+<details>
+    <summary>Answer</summary>
+
+The expression will be evaluated to true, since NULL will be treated as any other undefined variable.
+
+Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 </details>
 
