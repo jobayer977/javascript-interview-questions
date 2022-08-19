@@ -3,6 +3,7 @@ import { existsSync, lstatSync, readFileSync, readdirSync } from 'fs';
 import fs from 'fs';
 import metadataParser from 'markdown-yaml-metadata-parser';
 import path from 'path';
+
 (async function () {
 	const fromDir = (startPath, filter, callback) => {
 		if (!existsSync(startPath)) {
@@ -38,9 +39,12 @@ import path from 'path';
 		topics[section] = [...(topics[section] || []), payload];
 	});
 	const tableOfContentsStringForMarkdown = Object.entries(topics)
-		.map((x) => {
+		.map((x, i) => {
 			return `- ### [${x[0]}](#${slugify(x[0])})\n   ${x[1]
-				.map((y) => `- [${y.title}](#${slugify(y?.title)})`)
+				.map(
+					(y, yIndex) =>
+						`- ${i + 1}.${yIndex + 1} [${y.title}](#${i + 1}-${yIndex + 1}-${slugify(y?.title)})`
+				)
 				.join('\n   ')}\n`;
 		})
 		.join('');
