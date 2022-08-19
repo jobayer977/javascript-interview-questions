@@ -3,6 +3,7 @@ import { existsSync, lstatSync, readFileSync, readdirSync } from 'fs';
 import fs from 'fs';
 import metadataParser from 'markdown-yaml-metadata-parser';
 import path from 'path';
+
 (async function () {
 	const fromDir = (startPath, filter, callback) => {
 		if (!existsSync(startPath)) {
@@ -44,11 +45,11 @@ import path from 'path';
 	const topicsStringForMarkdown = Object.values(topics)
 		.flat(Infinity)
 		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`.trimStart())
-		.join('\n');
+		.join('');
 	// Write the file
 	fs.writeFileSync(
 		'./README.md',
-		` ## Table of Contents\n\n${tableOfContentsStringForMarkdown}  <br/><br/><br/><br/> \n\n ${topicsStringForMarkdown}`
+		`## Table of Contents\n\n${tableOfContentsStringForMarkdown}  <br/><br/><br/><br/> \n\n ${topicsStringForMarkdown}`
 	);
 	fs.writeFileSync('./json/topics.json', JSON.stringify(topics));
 })();
