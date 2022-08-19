@@ -3,7 +3,6 @@ import { existsSync, lstatSync, readFileSync, readdirSync } from 'fs';
 import fs from 'fs';
 import metadataParser from 'markdown-yaml-metadata-parser';
 import path from 'path';
-
 (async function () {
 	const fromDir = (startPath, filter, callback) => {
 		if (!existsSync(startPath)) {
@@ -38,32 +37,18 @@ import path from 'path';
 		};
 		topics[section] = [...(topics[section] || []), payload];
 	});
-	const tableOfContentsStringForMarkdown = Object.entries(topics)
-		.map((x, i) => {
-			return `- ### [${x[0]}](#${slugify(x[0])})\n   ${x[1]
-				.map(
-					(y, yIndex) =>
-						`- [${i + 1}.${yIndex + 1} ${y.title}](#${i + 1}.${yIndex + 1}-${slugify(y?.title)})`
-				)
-				.join('\n   ')}\n`;
-		})
+	const tableOfContentsStringForMarkdown = Object.values(topics)
+		.flat(Infinity)
+		.map((y, i) => `- [${i + 1} ${y?.title}](#${i + 1}-${slugify(y?.title)})\n`)
 		.join('');
-	// const topicsStringForMarkdown = Object.entries(topics)
-	// 	.map((x, i) => {
-	// 		return `# ${x[0]}\n ${x[1]
-	// 			.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`)
-	// 			.join('\n   ')}\n`;
-	// 	})
-	// 	.join('');
 	const topicsStringForMarkdown = Object.values(topics)
 		.flat(Infinity)
 		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`.trimStart())
 		.join('\n');
-
 	// Write the file
 	fs.writeFileSync(
 		'./README.md',
-		` ## Table of Contents\n\n ${tableOfContentsStringForMarkdown}  <br/><br/><br/><br/> \n\n ${topicsStringForMarkdown}`
+		` ## Table of Contents\n\n${tableOfContentsStringForMarkdown}  <br/><br/><br/><br/> \n\n ${topicsStringForMarkdown}`
 	);
 	fs.writeFileSync('./json/topics.json', JSON.stringify(topics));
 })();
