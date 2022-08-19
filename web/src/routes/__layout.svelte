@@ -17,6 +17,7 @@
 	import 'highlight.js/styles/github-dark-dimmed.css';
 	import Footer from '../components/Footer.svelte';
 	import '../styles/markdown.css';
+	import SeoHead from 'src/components/SeoHead.svelte';
 	export let currentRoute;
 	let showScrollTop = false;
 	onMount(() => {
@@ -39,6 +40,10 @@
 	};
 </script>
 
+<SeoHead
+	title="Javascript Questions"
+	ogDescription="Javascript Topics with Questions and Answers"
+/>
 {#key currentRoute}
 	<main in:fade={{ duration: 500, delay: 100 }} out:fade={{ duration: 100 }}>
 		<slot />
