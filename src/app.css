@@ -13,9 +13,9 @@ body {
 html {
 	height: 100%;
 }
-.markdown-body h2:first-child {
+/* .markdown-body h2:first-child {
 	display: none;
-}
+} */
 .content {
 	@apply shadow-md lg:p-[30px] rounded-[30px];
 }
