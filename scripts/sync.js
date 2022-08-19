@@ -43,7 +43,7 @@ import path from 'path';
 			return `- ### [${x[0]}](#${slugify(x[0])})\n   ${x[1]
 				.map(
 					(y, yIndex) =>
-						`- ${i + 1}.${yIndex + 1} [${y.title}](#${i + 1}-${yIndex + 1}-${slugify(y?.title)})`
+						`- [${i + 1}.${yIndex + 1} ${y.title}](#${i + 1}-${yIndex + 1}-${slugify(y?.title)})`
 				)
 				.join('\n   ')}\n`;
 		})
