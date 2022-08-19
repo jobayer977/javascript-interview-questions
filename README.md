@@ -172,6 +172,7 @@
 - [170 What is the output of below code](#what-is-the-output-of-below-code)
 - [171 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
 - [172 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
+- [173 What will be the output of this code?](#what-will-be-the-output-of-this-code)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3248,6 +3249,51 @@ var statements are hoisted (without their value initialization) to the top of th
 	console.log(y);
 })();
 ```
+
+</details>
+
+173. ### What will be the output of this code?
+
+```javascript
+var x = 21;
+var girl = function () {
+	console.log(x);
+	var x = 20;
+};
+girl();
+```
+
+<details>
+    <summary>Answer</summary>
+
+```js
+// Load state
+var x = undefined;
+var girl = function () {
+	console.log(x);
+	var x = 20;
+};
+
+// Execution State
+var x = 21;
+// loading State
+var girl = function () {
+	var x = undefined;
+	console.log(x);
+};
+// Execution State
+var girl = function () {
+	var x = undefined;
+	console.log(x); // undefined
+	x = 20;
+};
+```
+
+Neither 21, nor 20, the result is undefined
+
+It’s because JavaScript initialization is not hoisted.
+
+(Why doesn’t it show the global value of 21? The reason is that when the function is executed, it checks that there’s a local x variable present but doesn’t yet declare it, so it won’t look for global one.)
 
 </details>
 
