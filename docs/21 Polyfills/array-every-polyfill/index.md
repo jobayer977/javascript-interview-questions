@@ -1,5 +1,5 @@
 ---
-title: Array every polyfill
+title: Implement Array every polyfill ?
 ---
 
 <details>
