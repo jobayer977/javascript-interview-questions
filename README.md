@@ -176,6 +176,7 @@
 - [174 What will this code print?](#what-will-this-code-print)
 - [175 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
 - [176 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
+- [177 What would following code return?](#what-would-following-code-return)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3354,6 +3355,20 @@ myArray = ['start', ...myArray, 'end'];
 The expression will be evaluated to true, since NULL will be treated as any other undefined variable.
 
 Note: JavaScript is case-sensitive and here we are using NULL instead of null.
+
+</details>
+
+177. ### What would following code return?
+
+```js
+console.log(typeof typeof 1);
+```
+
+<details>
+    <summary>Answer</summary>
+
+`string`
+typeof 1 will return `"number"` and typeof `"number"` will return `string`.
 
 </details>
 
