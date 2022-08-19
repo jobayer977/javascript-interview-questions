@@ -57,7 +57,7 @@ import path from 'path';
 	// 	.join('');
 	const topicsStringForMarkdown = Object.values(topics)
 		.flat(Infinity)
-		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`)
+		.map((y, yIndex) => `${yIndex + 1}. ### ${y?.title} \n ${y?.content} \n`.trimStart())
 		.join('\n');
 
 	// Write the file
