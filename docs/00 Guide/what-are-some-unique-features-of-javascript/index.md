@@ -1,7 +1,6 @@
 ---
-title:  What are some unique features of JavaScript ?
+title: What are some unique features of JavaScript ?
 ---
-## What are some unique features of JavaScript ?
 
 There are at least three great things about JavaScript:
 

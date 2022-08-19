@@ -1,7 +1,6 @@
 ---
-title:  List down some of the features of ES6 ?
+title: List down some of the features of ES6 ?
 ---
-## List down some of the features of ES6 ?
 
 Below are the list of some new features of ES6,
 

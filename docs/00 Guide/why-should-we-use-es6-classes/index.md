@@ -1,7 +1,6 @@
 ---
-title:  Why should we use ES6 classes?
+title: Why should we use ES6 classes?
 ---
-## Why should we use ES6 classes?
 
 ES6 classes are syntactic sugar for the prototypical class system we use today. They make code more concise and self-documenting, which is reason enough to use them.
 
@@ -14,17 +13,17 @@ ES6 classes are syntactic sugar for the prototypical class system we use today. 
 **WithOut ES6 class:**
 
 ```javascript
-    var Foo = (function () {
-    function Foo(bar) {    
-        this._bar = bar;
-    }
+var Foo = (function () {
+	function Foo(bar) {
+		this._bar = bar;
+	}
 
-    Foo.prototype.getBar = function () {
-        return this._bar;
-    }
+	Foo.prototype.getBar = function () {
+		return this._bar;
+	};
 
-    return Foo;
-    })();
+	return Foo;
+})();
 ```
 
 **With ES6 class:**
@@ -32,12 +31,12 @@ The syntax is also way more clean and easier to understand.
 
 ```javascript
 class Foo {
-    constructor(bar) {
-        this._bar = bar;
-    }
+	constructor(bar) {
+		this._bar = bar;
+	}
 
-    getBar() {
-        return this._bar;
-    }
+	getBar() {
+		return this._bar;
+	}
 }
 ```

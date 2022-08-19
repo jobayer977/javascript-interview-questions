@@ -207,18 +207,19 @@ Uncaught SyntaxError: Identifier 'someVariable' has already been declared
 
    
  ### 1.2 Difference between Function Scope vs Block Scope in JavaScript? 
- ## Difference between Function Scope vs Block Scope in JavaScript?
+ 
+## Difference between Function Scope vs Block Scope in JavaScript?
 
 **Function Scope**:
 variables defined inside a function are not accessible outside the function.
 
 ```javascript
 function foo() {
- var a = 1;
- function bar() {
-  console.log(a); // 1
- }
- bar();
+	var a = 1;
+	function bar() {
+		console.log(a); // 1
+	}
+	bar();
 }
 
 foo(); // 1
@@ -230,8 +231,8 @@ This scope restricts the variable that is declared inside a specific block, from
 
 ```javascript
 if (true) {
- let a = 1;
- console.log(a); // 1
+	let a = 1;
+	console.log(a); // 1
 }
 console.log(a); // ReferenceError: a is not defined
 ```

@@ -1,7 +1,6 @@
 ---
-title:  Difference between Local and Global Variable ?
+title: Difference between Local and Global Variable ?
 ---
-## Difference between Local and Global Variable ?
 
 **KEY DIFFERENCE**
 

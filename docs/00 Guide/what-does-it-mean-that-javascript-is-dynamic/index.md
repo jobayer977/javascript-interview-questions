@@ -1,7 +1,6 @@
 ---
-title:  What does it mean that JavaScript is "dynamic"?
+title: What does it mean that JavaScript is "dynamic"?
 ---
-## What does it mean that JavaScript is "dynamic"?
 
 JavaScript is called a dynamic language because it doesn't just have a few dynamic aspects, pretty much everything is dynamic.
 

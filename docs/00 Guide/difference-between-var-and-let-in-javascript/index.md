@@ -1,7 +1,6 @@
 ---
-title:  Difference between var and let in JavaScript?
+title: Difference between var and let in JavaScript?
 ---
-## Difference between var and let in JavaScript?  
 
 The main difference between let and var is that scope of a variable defined with let is limited to the block in which it is declared while variable declared with var has the global scope. So we can say that var is rather a keyword which defines a variable globally regardless of block scope.
 

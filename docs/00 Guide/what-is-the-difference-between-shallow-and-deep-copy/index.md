@@ -1,15 +1,14 @@
 ---
-title:  What is the difference between Shallow and Deep copy
+title: What is the difference between Shallow and Deep copy
 ---
-## What is the difference between Shallow and Deep copy
 
 **Shallow Copy:** Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
 
 ```javascript
 var empDetails = {
-  name: "John",
-  age: 25,
-  expertise: "Software Developer",
+	name: 'John',
+	age: 25,
+	expertise: 'Software Developer'
 };
 ```
 
@@ -22,7 +21,7 @@ var empDetailsShallowCopy = empDetails; //Shallow copying!
 if we change some property value in the duplicate one like this:
 
 ```javascript
-empDetailsShallowCopy.name = "Johnson";
+empDetailsShallowCopy.name = 'Johnson';
 ```
 
 The above statement will also change the name of empDetails, since we have a shallow copy. That means we're losing the original data as well.
@@ -31,9 +30,9 @@ The above statement will also change the name of empDetails, since we have a sha
 
 ```javascript
 var empDetails = {
-  name: "John",
-  age: 25,
-  expertise: "Software Developer",
+	name: 'John',
+	age: 25,
+	expertise: 'Software Developer'
 };
 ```
 
@@ -41,9 +40,9 @@ Create a deep copy by using the properties from the original object into new var
 
 ```javascript
 var empDetailsDeepCopy = {
-  name: empDetails.name,
-  age: empDetails.age,
-  expertise: empDetails.expertise,
+	name: empDetails.name,
+	age: empDetails.age,
+	expertise: empDetails.expertise
 };
 ```
 

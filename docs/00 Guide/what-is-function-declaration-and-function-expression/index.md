@@ -1,14 +1,13 @@
 ---
-title:  what is function declaration and function expression ?
+title: what is function declaration and function expression ?
 ---
-## what is function declaration and function expression ?
 
 **Function Declaration**
 A function created with a function declaration is a Function object and has all the properties, methods and behavior of Function
 
 ```javascript
 function add(a, b) {
- return a + b;
+	return a + b;
 }
 ```
 
@@ -17,6 +16,6 @@ A Functions stored in variables do not need function names. They are always invo
 
 ```javascript
 const add = function (a, b) {
- return a + b;
+	return a + b;
 };
 ```

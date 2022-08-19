@@ -1,7 +1,6 @@
 ---
-title:  What is scope of variable in JavaScript ?
+title: What is scope of variable in JavaScript ?
 ---
-## What is scope of variable in JavaScript ?
 
 The scope of a variable is the region of your program in which it is defined. JavaScript variables have only two scopes.
 
