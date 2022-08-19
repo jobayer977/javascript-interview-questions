@@ -2,9 +2,9 @@
 
 ### Resources
 
-[Interview-questions - by Toptal](https://www.toptal.com/javascript/interview-questions)
-[Javascript-interview-questions - by sudheerj](https://github.com/sudheerj/javascript-interview-questions)
-[javascript-questions - by lydiahallie](https://github.com/lydiahallie/javascript-questions)
+- [Interview-questions - by Toptal](https://www.toptal.com/javascript/interview-questions)
+- [Javascript-interview-questions - by sudheerj](https://github.com/sudheerj/javascript-interview-questions)
+- [javascript-questions - by lydiahallie](https://github.com/lydiahallie/javascript-questions)
 
 ## Table of Contents
 

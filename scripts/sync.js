@@ -63,7 +63,7 @@ import path from 'path';
 		.join('');
 
 	const resourcesStringForMarkdown = resources
-		.map((y, yIndex) => `[${y.title}](${y.url})\n`)
+		.map((y, yIndex) => `- [${y.title}](${y.url}) \n`)
 		.join('');
 	console.log(resourcesStringForMarkdown);
 	// Write the file
