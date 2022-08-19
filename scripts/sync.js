@@ -47,7 +47,9 @@ import path from 'path';
 		.join('');
 	const topicsStringForMarkdown = Object.entries(topics)
 		.map((x, i) => {
-			return `# ${x[0]}\n ${x[1].map((y) => `\n ${y?.content} \n`).join('\n   ')}\n`;
+			return `# ${x[0]}\n ${x[1]
+				.map((y, yIndex) => `\n ## ${i + 1}.${yIndex + 1} ${y?.title} \n ${y?.content} \n`)
+				.join('\n   ')}\n`;
 		})
 		.join('');
 	// Write the file
