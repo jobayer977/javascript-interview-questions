@@ -72,7 +72,11 @@ import path from 'path'
 		`# ${title} \n ### Resources \n${resourcesStringForMarkdown} \n\n ## Table of Contents\n\n${tableOfContentsStringForMarkdown}<br/><br/><br/><br/>\n\n${topicsStringForMarkdown}`
 	)
 	fs.writeFileSync('./json/topics.json', JSON.stringify(topics))
-	console.log('🎯 Sync Successfully completed   ')
+	console.log(
+		`🎯 Sync Successfully completed - ${
+			Object.values(topics).flat(Infinity).length
+		}`
+	)
 })()
 // mark string to slug
 function slugify(text) {

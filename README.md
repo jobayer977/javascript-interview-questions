@@ -184,21 +184,29 @@
 - [175 Implement Array filter polyfill ?](#implement-array-filter-polyfill)
 - [176 Implement Array find polyfill ?](#implement-array-find-polyfill)
 - [177 Implement Array forEach polyfill ?](#implement-array-foreach-polyfill)
-- [178 What is the output of below code](#what-is-the-output-of-below-code)
-- [179 What is the output of below code](#what-is-the-output-of-below-code)
-- [180 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
-- [181 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
-- [182 What will be the output of this code?](#what-will-be-the-output-of-this-code)
-- [183 What will this code print?](#what-will-this-code-print)
-- [184 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
-- [185 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
-- [186 What would following code return?](#what-would-following-code-return)
-- [187 What will the following code output and why?](#what-will-the-following-code-output-and-why)
-- [188 What is the output of below code ?](#what-is-the-output-of-below-code)
-- [189 What is the output of below code ?](#what-is-the-output-of-below-code)
-- [190 What's the output?](#whats-the-output)
-- [191 What's the output?](#whats-the-output)
-- [192 What's the output?](#whats-the-output)
+- [178 Implement Array includes polyfill ?](#implement-array-includes-polyfill)
+- [179 Implement Array indexOf polyfill ?](#implement-array-indexof-polyfill)
+- [180 Implement Array join polyfill ?](#implement-array-join-polyfill)
+- [181 Implement Array map polyfill ?](#implement-array-map-polyfill)
+- [182 Implement Array slice polyfill ?](#implement-array-slice-polyfill)
+- [183 Implement Array some polyfill ?](#implement-array-some-polyfill)
+- [184 Implement Array unshift polyfill ?](#implement-array-unshift-polyfill)
+- [185 Implement stack data structure ?](#implement-stack-data-structure)
+- [186 What is the output of below code](#what-is-the-output-of-below-code)
+- [187 What is the output of below code](#what-is-the-output-of-below-code)
+- [188 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
+- [189 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
+- [190 What will be the output of this code?](#what-will-be-the-output-of-this-code)
+- [191 What will this code print?](#what-will-this-code-print)
+- [192 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
+- [193 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
+- [194 What would following code return?](#what-would-following-code-return)
+- [195 What will the following code output and why?](#what-will-the-following-code-output-and-why)
+- [196 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [197 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [198 What's the output?](#whats-the-output)
+- [199 What's the output?](#whats-the-output)
+- [200 What's the output?](#whats-the-output)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3290,7 +3298,166 @@ Array.prototype.forEachImpl = function (callback) {
 ```
 </details>
 
-178. ### What is the output of below code
+178. ### Implement Array includes polyfill ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.includesImpl = function (value) {
+	for (let i = 0; i < this.length; i++) {
+		if (this[i] === value) {
+			return true
+		}
+	}
+	return false
+}
+```
+</details>
+
+179. ### Implement Array indexOf polyfill ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.indexOfImpl = function (value) {
+	for (let i = 0; i < this.length; i++) {
+		if (this[i] === value) {
+			return i
+		}
+	}
+	return -1
+}
+```
+</details>
+
+180. ### Implement Array join polyfill ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.joinImpl = function (separator) {
+	const arr = this
+	let str = ''
+	for (let i = 0; i < arr.length; i++) {
+		str += arr[i]
+		if (i < arr.length - 1) {
+			str += separator
+		}
+	}
+	return str
+}
+```
+</details>
+
+181. ### Implement Array map polyfill ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.mapImpl = function (fn) {
+	const result = []
+	for (let i = 0; i < this.length; i++) {
+		result.push(fn(this[i]))
+	}
+	return result
+}
+```
+</details>
+
+182. ### Implement Array slice polyfill ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.sliceImpl = function (start = 0, end = this.length) {
+	let arr = []
+	for (let i = 0; i < this.length; i++) {
+		if (start <= i && end >= i) {
+			arr.push(this[i])
+		}
+	}
+	return arr
+}
+```
+</details>
+
+183. ### Implement Array some polyfill ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.someImpl = function (callback) {
+	let passed = false
+	for (let i = 0; i < this.length; i++) {
+		if (callback && callback(this[i], i, this)) {
+			passed = true
+			break
+		} else {
+			passed = false
+		}
+	}
+	return passed
+}
+
+```
+</details>
+```
+
+184. ### Implement Array unshift polyfill ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+Array.prototype.unshiftImpl = function (...args) {
+	for (let i = 0; i < args.length; i++) {
+		this.splice(i, 0, args[i])
+	}
+	return this.length
+}
+
+```
+</details>
+```
+
+185. ### Implement stack data structure ?
+
+<details>
+    <summary>Answer</summary>
+	
+```js
+class Stack {
+	constructor() {
+		this.items = []
+	}
+	push(item) {
+		this.items.push(item)
+	}
+	pop() {
+		return this.items.pop()
+	}
+	peek() {
+		return this.items[this.items.length - 1]
+	}
+	isEmpty() {
+		return this.items.length === 0
+	}
+	clear() {
+		this.items = []
+	}
+}
+
+```
+</details>
+```
+
+186. ### What is the output of below code
 
 ```javascript
 console.log(sum(2, 3)); // Outputs 5
@@ -3314,7 +3481,7 @@ function sum(x) {
 
 </details>
 
-179. ### What is the output of below code
+187. ### What is the output of below code
 
 ```javascript
 var arr1 = 'john'.split('');
@@ -3336,7 +3503,7 @@ console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));
 
 </details>
 
-180. ### What will the following code output to the console and why?
+188. ### What will the following code output to the console and why?
 
 ```javascript
 var hero = {
@@ -3372,7 +3539,7 @@ var stoleSecretIdentity = hero.getSecretIdentity.bind(hero);
 
 </details>
 
-181. ### Consider the following code. What will the output be, and why?
+189. ### Consider the following code. What will the output be, and why?
 
 ```javascript
 (function () {
@@ -3417,7 +3584,7 @@ var statements are hoisted (without their value initialization) to the top of th
 
 </details>
 
-182. ### What will be the output of this code?
+190. ### What will be the output of this code?
 
 ```javascript
 var x = 21;
@@ -3462,7 +3629,7 @@ It’s because JavaScript initialization is not hoisted.
 
 </details>
 
-183. ### What will this code print?
+191. ### What will this code print?
 
 ```javascript
 var x = 21;
@@ -3488,7 +3655,7 @@ It will print 0 1 2 3 4, because we use let instead of var here. The variable i 
 
 </details>
 
-184. ### How do you add an element at the begining of an array? How do you add one at the end?
+192. ### How do you add an element at the begining of an array? How do you add one at the end?
 
 <details>
     <summary>Answer</summary>
@@ -3508,7 +3675,7 @@ myArray = ['start', ...myArray, 'end'];
 
 </details>
 
-185. ### What is the value of typeof undefined == typeof NULL?
+193. ### What is the value of typeof undefined == typeof NULL?
 
 <details>
     <summary>Answer</summary>
@@ -3519,7 +3686,7 @@ Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 </details>
 
-186. ### What would following code return?
+194. ### What would following code return?
 
 ```js
 console.log(typeof typeof 1);
@@ -3533,7 +3700,7 @@ typeof 1 will return `"number"` and typeof `"number"` will return `string`.
 
 </details>
 
-187. ### What will the following code output and why?
+195. ### What will the following code output and why?
 
 ```js
 var b = 1;
@@ -3569,7 +3736,7 @@ function inner() {
 
 </details>
 
-188. ### What is the output of below code ?
+196. ### What is the output of below code ?
 
 ```js
 var car = new Vehicle('Honda', 'white', '2010', 'UK');
@@ -3589,7 +3756,7 @@ The function declarations are hoisted similar to any variables. So the placement
 
 </details>
 
-189. ### What is the output of below code ?
+197. ### What is the output of below code ?
 
 ```js
 function foo() {
@@ -3615,7 +3782,7 @@ x = window.y;
 
 </details>
 
-190. ### What's the output?
+198. ### What's the output?
 
 ```js
 function sayHi() {
@@ -3637,7 +3804,7 @@ Variables with the let keyword (and const) are hoisted, but unlike var, don't ge
 
 </details>
 
-191. ### What's the output?
+199. ### What's the output?
 
 ```js
 let c = { greeting: 'Hey!' }
@@ -3658,7 +3825,7 @@ When you change one object, you change all of them.
 
 </details>
 
-192. ### What's the output?
+200. ### What's the output?
 
 ```js
 class Chameleon {
