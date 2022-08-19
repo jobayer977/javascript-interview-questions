@@ -173,6 +173,8 @@
 - [171 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
 - [172 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
 - [173 What will be the output of this code?](#what-will-be-the-output-of-this-code)
+- [174 What will this code print?](#what-will-this-code-print)
+- [175 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3294,6 +3296,51 @@ Neither 21, nor 20, the result is undefined
 It’s because JavaScript initialization is not hoisted.
 
 (Why doesn’t it show the global value of 21? The reason is that when the function is executed, it checks that there’s a local x variable present but doesn’t yet declare it, so it won’t look for global one.)
+
+</details>
+
+174. ### What will this code print?
+
+```javascript
+var x = 21;
+var girl = function () {
+	console.log(x);
+	var x = 20;
+};
+girl();
+```
+
+<details>
+    <summary>Answer</summary>
+
+```js
+for (let i = 0; i < 5; i++) {
+	setTimeout(function () {
+		console.log(i);
+	}, i * 1000);
+}
+```
+
+It will print 0 1 2 3 4, because we use let instead of var here. The variable i is only seen in the for loop’s block scope.
+
+</details>
+
+175. ### How do you add an element at the begining of an array? How do you add one at the end?
+
+<details>
+    <summary>Answer</summary>
+```js
+var myArray = ['a', 'b', 'c', 'd'];
+myArray.push('end');
+myArray.unshift('start');
+console.log(myArray); // ["start", "a", "b", "c", "d", "end"]
+```
+
+With ES6, one can use the spread operator:
+
+```js
+myArray = ['start', ...myArray, 'end'];
+```
 
 </details>
 
