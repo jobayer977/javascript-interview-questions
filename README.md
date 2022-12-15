@@ -197,16 +197,15 @@
 - [188 What will the following code output to the console and why?](#what-will-the-following-code-output-to-the-console-and-why)
 - [189 Consider the following code. What will the output be, and why?](#consider-the-following-code-what-will-the-output-be-and-why)
 - [190 What will be the output of this code?](#what-will-be-the-output-of-this-code)
-- [191 What will this code print?](#what-will-this-code-print)
-- [192 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
-- [193 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
-- [194 What would following code return?](#what-would-following-code-return)
-- [195 What will the following code output and why?](#what-will-the-following-code-output-and-why)
+- [191 How do you add an element at the begining of an array? How do you add one at the end?](#how-do-you-add-an-element-at-the-begining-of-an-array-how-do-you-add-one-at-the-end)
+- [192 What is the value of typeof undefined == typeof NULL?](#what-is-the-value-of-typeof-undefined-typeof-null)
+- [193 What would following code return?](#what-would-following-code-return)
+- [194 What will the following code output and why?](#what-will-the-following-code-output-and-why)
+- [195 What is the output of below code ?](#what-is-the-output-of-below-code)
 - [196 What is the output of below code ?](#what-is-the-output-of-below-code)
-- [197 What is the output of below code ?](#what-is-the-output-of-below-code)
+- [197 What's the output?](#whats-the-output)
 - [198 What's the output?](#whats-the-output)
 - [199 What's the output?](#whats-the-output)
-- [200 What's the output?](#whats-the-output)
 <br/><br/><br/><br/>
 
 1. ### Can I redeclare let and const variables?
@@ -3542,44 +3541,45 @@ var stoleSecretIdentity = hero.getSecretIdentity.bind(hero);
 189. ### Consider the following code. What will the output be, and why?
 
 ```javascript
-(function () {
+;(function () {
 	try {
-		throw new Error();
+		throw new Error()
 	} catch (x) {
 		var x = 1,
-			y = 2;
-		console.log('INSIDE', x);
-		console.log('INSIDE', y);
+			y = 2
+		console.log('INSIDE', x)
+		console.log('INSIDE', y)
 	}
-	console.log('OUTSIDE', x);
-	console.log('OUTSIDE', y);
-})();
+	console.log('OUTSIDE', x)
+	console.log('OUTSIDE', y)
+})()
 ```
 
 <details>
     <summary>Answer</summary>
 
 ```js
-1;
-undefined;
-2;
+INSIDE 1
+INSIDE 2
+OUTSIDE undefined
+OUTSIDE 2
 ```
 
 var statements are hoisted (without their value initialization) to the top of the global or function scope it belongs to, even when it’s inside a with or catch block. However, the error’s identifier is only visible inside the catch block. It is equivalent to:
 
 ```js
-(function () {
-	var x, y; // outer and hoisted
+;(function () {
+	var x, y // outer and hoisted
 	try {
-		throw new Error();
+		throw new Error()
 	} catch (x /* inner */) {
-		x = 1; // inner x, not the outer one
-		y = 2; // there is only one y, which is in the outer scope
-		console.log(x /* inner */);
+		x = 1 // inner x, not the outer one
+		y = 2 // there is only one y, which is in the outer scope
+		console.log(x /* inner */)
 	}
-	console.log(x);
-	console.log(y);
-})();
+	console.log(x)
+	console.log(y)
+})()
 ```
 
 </details>
@@ -3629,33 +3629,7 @@ It’s because JavaScript initialization is not hoisted.
 
 </details>
 
-191. ### What will this code print?
-
-```javascript
-var x = 21;
-var girl = function () {
-	console.log(x);
-	var x = 20;
-};
-girl();
-```
-
-<details>
-    <summary>Answer</summary>
-
-```js
-for (let i = 0; i < 5; i++) {
-	setTimeout(function () {
-		console.log(i);
-	}, i * 1000);
-}
-```
-
-It will print 0 1 2 3 4, because we use let instead of var here. The variable i is only seen in the for loop’s block scope.
-
-</details>
-
-192. ### How do you add an element at the begining of an array? How do you add one at the end?
+191. ### How do you add an element at the begining of an array? How do you add one at the end?
 
 <details>
     <summary>Answer</summary>
@@ -3675,7 +3649,7 @@ myArray = ['start', ...myArray, 'end'];
 
 </details>
 
-193. ### What is the value of typeof undefined == typeof NULL?
+192. ### What is the value of typeof undefined == typeof NULL?
 
 <details>
     <summary>Answer</summary>
@@ -3686,7 +3660,7 @@ Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 </details>
 
-194. ### What would following code return?
+193. ### What would following code return?
 
 ```js
 console.log(typeof typeof 1);
@@ -3700,7 +3674,7 @@ typeof 1 will return `"number"` and typeof `"number"` will return `string`.
 
 </details>
 
-195. ### What will the following code output and why?
+194. ### What will the following code output and why?
 
 ```js
 var b = 1;
@@ -3736,7 +3710,7 @@ function inner() {
 
 </details>
 
-196. ### What is the output of below code ?
+195. ### What is the output of below code ?
 
 ```js
 var car = new Vehicle('Honda', 'white', '2010', 'UK');
@@ -3756,7 +3730,7 @@ The function declarations are hoisted similar to any variables. So the placement
 
 </details>
 
-197. ### What is the output of below code ?
+196. ### What is the output of below code ?
 
 ```js
 function foo() {
@@ -3782,7 +3756,7 @@ x = window.y;
 
 </details>
 
-198. ### What's the output?
+197. ### What's the output?
 
 ```js
 function sayHi() {
@@ -3804,7 +3778,7 @@ Variables with the let keyword (and const) are hoisted, but unlike var, don't ge
 
 </details>
 
-199. ### What's the output?
+198. ### What's the output?
 
 ```js
 let c = { greeting: 'Hey!' }
@@ -3825,7 +3799,7 @@ When you change one object, you change all of them.
 
 </details>
 
-200. ### What's the output?
+199. ### What's the output?
 
 ```js
 class Chameleon {
